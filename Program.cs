@@ -1,4 +1,5 @@
 ﻿namespace Gaokao
+
 {
     internal static class Program
     {
@@ -23,4 +24,5 @@
         public int score;
         public int rank;
     }
+    
 }

@@ -1,8 +1,8 @@
-namespace Gaokao
+﻿namespace Gaokao
 {
-    public partial class Form1 : Form
+    public partial class ApplicationForm : Form
     {
-        public Form1()
+        public ApplicationForm()
         {
             InitializeComponent();
         }
