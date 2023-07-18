@@ -6,11 +6,13 @@
         /// <summary>
         ///  The main entry point for the application.
         /// </summary>
+        /// 
+
         [STAThread]
         static void Main()
         {
-            ApplicationForm form = new ApplicationForm();
-            Application.Run(form);
+            ApplicationForm mainform = new ApplicationForm();
+            Application.Run(mainform);
             Student student = new Student();
         }
     }
