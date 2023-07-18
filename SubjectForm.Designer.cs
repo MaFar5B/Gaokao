@@ -28,74 +28,76 @@
         /// </summary>
         private void InitializeComponent()
         {
-            checkBox1 = new CheckBox();
-            checkBox2 = new CheckBox();
-            checkBox3 = new CheckBox();
-            checkBox4 = new CheckBox();
-            checkBox5 = new CheckBox();
-            checkBox6 = new CheckBox();
+            phy = new CheckBox();
+            bio = new CheckBox();
+            his = new CheckBox();
+            ch = new CheckBox();
+            pol = new CheckBox();
+            geo = new CheckBox();
             button1 = new Button();
             SuspendLayout();
             // 
-            // checkBox1
+            // phy
             // 
-            checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(102, 28);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(72, 28);
-            checkBox1.TabIndex = 0;
-            checkBox1.Text = "物理";
-            checkBox1.UseVisualStyleBackColor = true;
+            phy.AutoSize = true;
+            phy.Location = new Point(102, 28);
+            phy.Name = "phy";
+            phy.Size = new Size(72, 28);
+            phy.TabIndex = 0;
+            phy.Text = "物理";
+            phy.UseVisualStyleBackColor = true;
             // 
-            // checkBox2
+            // bio
             // 
-            checkBox2.AutoSize = true;
-            checkBox2.Location = new Point(102, 62);
-            checkBox2.Name = "checkBox2";
-            checkBox2.Size = new Size(72, 28);
-            checkBox2.TabIndex = 1;
-            checkBox2.Text = "生物";
-            checkBox2.UseVisualStyleBackColor = true;
+            bio.AutoSize = true;
+            bio.Location = new Point(102, 62);
+            bio.Name = "bio";
+            bio.Size = new Size(72, 28);
+            bio.TabIndex = 1;
+            bio.Text = "生物";
+            bio.UseVisualStyleBackColor = true;
             // 
-            // checkBox3
+            // his
             // 
-            checkBox3.AutoSize = true;
-            checkBox3.Location = new Point(102, 96);
-            checkBox3.Name = "checkBox3";
-            checkBox3.Size = new Size(72, 28);
-            checkBox3.TabIndex = 2;
-            checkBox3.Text = "历史";
-            checkBox3.UseVisualStyleBackColor = true;
+            his.AccessibleDescription = "";
+            his.AutoSize = true;
+            his.Location = new Point(102, 96);
+            his.Name = "his";
+            his.Size = new Size(72, 28);
+            his.TabIndex = 2;
+            his.Text = "历史";
+            his.UseVisualStyleBackColor = true;
             // 
-            // checkBox4
+            // ch
             // 
-            checkBox4.AutoSize = true;
-            checkBox4.Location = new Point(247, 28);
-            checkBox4.Name = "checkBox4";
-            checkBox4.Size = new Size(72, 28);
-            checkBox4.TabIndex = 3;
-            checkBox4.Text = "化学";
-            checkBox4.UseVisualStyleBackColor = true;
+            ch.AutoSize = true;
+            ch.Location = new Point(247, 28);
+            ch.Name = "ch";
+            ch.Size = new Size(72, 28);
+            ch.TabIndex = 3;
+            ch.Text = "化学";
+            ch.UseVisualStyleBackColor = true;
             // 
-            // checkBox5
+            // pol
             // 
-            checkBox5.AutoSize = true;
-            checkBox5.Location = new Point(247, 62);
-            checkBox5.Name = "checkBox5";
-            checkBox5.Size = new Size(72, 28);
-            checkBox5.TabIndex = 4;
-            checkBox5.Text = "政治";
-            checkBox5.UseVisualStyleBackColor = true;
+            pol.AutoSize = true;
+            pol.Location = new Point(247, 62);
+            pol.Name = "pol";
+            pol.Size = new Size(72, 28);
+            pol.TabIndex = 4;
+            pol.Text = "政治";
+            pol.UseVisualStyleBackColor = true;
             // 
-            // checkBox6
+            // geo
             // 
-            checkBox6.AutoSize = true;
-            checkBox6.Location = new Point(247, 96);
-            checkBox6.Name = "checkBox6";
-            checkBox6.Size = new Size(72, 28);
-            checkBox6.TabIndex = 5;
-            checkBox6.Text = "地理";
-            checkBox6.UseVisualStyleBackColor = true;
+            geo.AccessibleDescription = "";
+            geo.AutoSize = true;
+            geo.Location = new Point(247, 96);
+            geo.Name = "geo";
+            geo.Size = new Size(72, 28);
+            geo.TabIndex = 5;
+            geo.Text = "地理";
+            geo.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
@@ -105,6 +107,7 @@
             button1.TabIndex = 6;
             button1.Text = "确认";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += confirmsubject;
             // 
             // SubjectForm
             // 
@@ -113,12 +116,12 @@
             BackColor = SystemColors.Info;
             ClientSize = new Size(422, 220);
             Controls.Add(button1);
-            Controls.Add(checkBox6);
-            Controls.Add(checkBox5);
-            Controls.Add(checkBox4);
-            Controls.Add(checkBox3);
-            Controls.Add(checkBox2);
-            Controls.Add(checkBox1);
+            Controls.Add(geo);
+            Controls.Add(pol);
+            Controls.Add(ch);
+            Controls.Add(his);
+            Controls.Add(bio);
+            Controls.Add(phy);
             Name = "SubjectForm";
             Text = "科目选择";
             ResumeLayout(false);
@@ -127,12 +130,12 @@
 
         #endregion
 
-        private CheckBox checkBox1;
-        private CheckBox checkBox2;
-        private CheckBox checkBox3;
-        private CheckBox checkBox4;
-        private CheckBox checkBox5;
-        private CheckBox checkBox6;
+        private CheckBox phy;
+        private CheckBox bio;
+        private CheckBox his;
+        private CheckBox ch;
+        private CheckBox pol;
+        private CheckBox geo;
         private Button button1;
     }
 }

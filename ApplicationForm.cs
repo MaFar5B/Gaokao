@@ -2,6 +2,7 @@
 {
     public partial class ApplicationForm : Form
     {
+        public static SubjectForm subjectselectform = new SubjectForm();
         public ApplicationForm()
         {
             InitializeComponent();
@@ -10,8 +11,7 @@
 
         private void SelectSubject(object sender, EventArgs e)
         {
-            SubjectForm subjectselectform = new SubjectForm();
-            subjectselectform.Show();
+            subjectselectform.ShowDialog();
         }
     }
 }
