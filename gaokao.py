@@ -1,4 +1,4 @@
-from process import getRank
+import process
 
 class Student():
     def __init__(self):
@@ -9,4 +9,3 @@ class Student():
 
 if __name__ == "__main__":
     print("started")
-    print(getRank(666))
