@@ -1,4 +1,5 @@
-namespace Gaokao
+﻿namespace Gaokao
+
 {
     internal static class Program
     {
@@ -8,10 +9,20 @@ namespace Gaokao
         [STAThread]
         static void Main()
         {
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new Form1());
+            Application.Run(new ApplicationForm());
+            Student student = new Student();
         }
     }
+
+    public class Student
+    {
+        public String subject1;
+        public String subject2;
+        public String subject3;
+        public String wish;
+        public int score;
+        public int rank;
+    }
+    
 }
