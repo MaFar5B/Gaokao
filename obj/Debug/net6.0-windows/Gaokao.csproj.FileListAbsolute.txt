@@ -5,7 +5,6 @@ G:\Documents\GitHub\Gaokao\bin\Debug\net6.0-windows\Gaokao.dll
 G:\Documents\GitHub\Gaokao\bin\Debug\net6.0-windows\Gaokao.pdb
 G:\Documents\GitHub\Gaokao\obj\Debug\net6.0-windows\Gaokao.csproj.AssemblyReference.cache
 G:\Documents\GitHub\Gaokao\obj\Debug\net6.0-windows\Gaokao.ApplicationForm.resources
-G:\Documents\GitHub\Gaokao\obj\Debug\net6.0-windows\Gaokao.Form1.resources
 G:\Documents\GitHub\Gaokao\obj\Debug\net6.0-windows\Gaokao.csproj.GenerateResource.cache
 G:\Documents\GitHub\Gaokao\obj\Debug\net6.0-windows\Gaokao.GeneratedMSBuildEditorConfig.editorconfig
 G:\Documents\GitHub\Gaokao\obj\Debug\net6.0-windows\Gaokao.AssemblyInfoInputs.cache

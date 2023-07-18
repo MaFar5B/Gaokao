@@ -9,8 +9,8 @@
         [STAThread]
         static void Main()
         {
-            ApplicationConfiguration.Initialize();
-            Application.Run(new ApplicationForm());
+            ApplicationForm form = new ApplicationForm();
+            Application.Run(form);
             Student student = new Student();
         }
     }
