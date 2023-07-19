@@ -3,6 +3,7 @@
     public partial class ApplicationForm : Form
     {
         public static SubjectForm subjectselectform = new SubjectForm();
+        public static WishForm wishform = new WishForm();
         public ApplicationForm()
         {
             InitializeComponent();
@@ -33,6 +34,8 @@
 
         private void Botton3_Click(object sender, EventArgs e)
         {
+            wishform.ShowDialog();
+            WishForm.WishList.Clear();
         }
     }
 }

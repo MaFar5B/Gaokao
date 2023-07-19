@@ -16,3 +16,4 @@ G:\Documents\GitHub\Gaokao\obj\Debug\net6.0-windows\Gaokao.pdb
 G:\Documents\GitHub\Gaokao\obj\Debug\net6.0-windows\Gaokao.genruntimeconfig.cache
 G:\Documents\GitHub\Gaokao\obj\Debug\net6.0-windows\ref\Gaokao.dll
 G:\Documents\GitHub\Gaokao\obj\Debug\net6.0-windows\Gaokao.SubjectForm.resources
+G:\Documents\GitHub\Gaokao\obj\Debug\net6.0-windows\Gaokao.WishForm.resources

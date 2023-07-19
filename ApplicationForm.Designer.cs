@@ -42,6 +42,7 @@
             // button1
             // 
             button1.BackColor = SystemColors.ButtonHighlight;
+            button1.Cursor = Cursors.Hand;
             button1.Location = new Point(310, 361);
             button1.Name = "button1";
             button1.Size = new Size(180, 62);
@@ -71,6 +72,7 @@
             // button2
             // 
             button2.BackColor = SystemColors.ButtonHighlight;
+            button2.Cursor = Cursors.Hand;
             button2.Location = new Point(325, 37);
             button2.Name = "button2";
             button2.Size = new Size(150, 34);
@@ -112,6 +114,7 @@
             // button3
             // 
             button3.BackColor = SystemColors.ButtonHighlight;
+            button3.Cursor = Cursors.Hand;
             button3.Location = new Point(325, 286);
             button3.Name = "button3";
             button3.Size = new Size(150, 34);
