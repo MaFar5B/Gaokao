@@ -7,11 +7,11 @@
         ///  The main entry point for the application.
         /// </summary>
         /// 
+        public static ApplicationForm mainform = new ApplicationForm();
 
         [STAThread]
         static void Main()
         {
-            ApplicationForm mainform = new ApplicationForm();
             Application.Run(mainform);
             Student student = new Student();
         }

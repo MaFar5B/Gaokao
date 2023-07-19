@@ -2,6 +2,10 @@
 {
     partial class ApplicationForm
     {
+        public static Label label1 = new Label();
+        public static Label label2 = new Label();
+        public static Label label3 = new Label();
+
         /// <summary>
         ///  Required designer variable.
         /// </summary>
@@ -26,15 +30,13 @@
         ///  Required method for Designer support - do not modify
         ///  the contents of this method with the code editor.
         /// </summary>
+        
         private void InitializeComponent()
         {
             button1 = new Button();
             label4 = new Label();
             textBox5 = new TextBox();
             button2 = new Button();
-            label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
             SuspendLayout();
             // 
             // button1
@@ -78,30 +80,30 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(185, 114);
+            label1.Location = new Point(185, 124);
             label1.Name = "label1";
             label1.Size = new Size(63, 24);
             label1.TabIndex = 13;
-            label1.Text = "label1";
+            label1.Text = "物理";
             label1.Click += label1_Click;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(377, 114);
+            label2.Location = new Point(377, 124);
             label2.Name = "label2";
             label2.Size = new Size(46, 24);
             label2.TabIndex = 14;
-            label2.Text = "物理";
+            label2.Text = "化学";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(538, 114);
+            label3.Location = new Point(538, 124);
             label3.Name = "label3";
             label3.Size = new Size(63, 24);
             label3.TabIndex = 15;
-            label3.Text = "label3";
+            label3.Text = "生物";
             // 
             // ApplicationForm
             // 
@@ -117,6 +119,7 @@
             Controls.Add(label4);
             Controls.Add(button1);
             Name = "ApplicationForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             ResumeLayout(false);
             PerformLayout();
@@ -128,8 +131,5 @@
         private Label label4;
         private TextBox textBox5;
         private Button button2;
-        private Label label1;
-        private Label label2;
-        private Label label3;
     }
 }

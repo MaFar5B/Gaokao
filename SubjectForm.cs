@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -22,15 +24,34 @@ namespace Gaokao
         private void confirmsubject(object sender, EventArgs e)
         {
             count = Convert.ToInt32(phy.Checked) + Convert.ToInt32(ch.Checked) + Convert.ToInt32(bio.Checked) + Convert.ToInt32(pol.Checked) + Convert.ToInt32(his.Checked) + Convert.ToInt32(geo.Checked);
-            if(count < 3)
+            if (count < 3)
             {
                 MessageBox.Show("必须选择三个科目！");
-            } else if(count > 3)
+            }
+            else if (count > 3)
             {
                 MessageBox.Show("最多选择三个科目！");
-            } else
+            }
+            else
             {
                 ApplicationForm.subjectselectform.Hide();
+                List<String> subjects = new List<String>();
+                if (phy.Checked)
+                    subjects.Add("物理");
+                if (ch.Checked)
+                    subjects.Add("化学");
+                if (bio.Checked)
+                    subjects.Add("生物");
+                if (pol.Checked)
+                    subjects.Add("政治");
+                if (his.Checked)
+                    subjects.Add("历史");
+                if (geo.Checked)
+                    subjects.Add("地理");
+                ApplicationForm.label1.Text = subjects[0];
+                ApplicationForm.label2.Text = subjects[1];
+                ApplicationForm.label3.Text = subjects[2];
+                subjects.Clear();
             }
         }
     }

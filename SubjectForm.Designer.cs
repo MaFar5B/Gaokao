@@ -123,6 +123,7 @@
             Controls.Add(bio);
             Controls.Add(phy);
             Name = "SubjectForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "科目选择";
             ResumeLayout(false);
             PerformLayout();
