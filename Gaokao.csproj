@@ -8,8 +8,4 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="pythonnet" Version="3.1.0-preview2023-07-03" />
-  </ItemGroup>
-
 </Project>
