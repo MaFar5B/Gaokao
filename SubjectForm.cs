@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.DataFormats;
 
 namespace Gaokao
 {
@@ -34,7 +35,6 @@ namespace Gaokao
             }
             else
             {
-                ApplicationForm.subjectselectform.Hide();
                 List<String> subjects = new List<String>();
                 if (phy.Checked)
                     subjects.Add("物理");
@@ -48,10 +48,8 @@ namespace Gaokao
                     subjects.Add("历史");
                 if (geo.Checked)
                     subjects.Add("地理");
-                ApplicationForm.label1.Text = subjects[0];
-                ApplicationForm.label2.Text = subjects[1];
-                ApplicationForm.label3.Text = subjects[2];
-                subjects.Clear();
+                ApplicationForm.subjectselectform.Hide();
+                Program.mainform.setLable(subjects[0], subjects[1], subjects[2]);
             }
         }
     }

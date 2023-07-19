@@ -2,10 +2,6 @@
 {
     partial class ApplicationForm
     {
-        public static Label label1 = new Label();
-        public static Label label2 = new Label();
-        public static Label label3 = new Label();
-
         /// <summary>
         ///  Required designer variable.
         /// </summary>
@@ -30,13 +26,16 @@
         ///  Required method for Designer support - do not modify
         ///  the contents of this method with the code editor.
         /// </summary>
-        
+
         private void InitializeComponent()
         {
             button1 = new Button();
             label4 = new Label();
             textBox5 = new TextBox();
             button2 = new Button();
+            label1 = new Label();
+            label2 = new Label();
+            label3 = new Label();
             SuspendLayout();
             // 
             // button1
@@ -65,6 +64,7 @@
             textBox5.Name = "textBox5";
             textBox5.Size = new Size(112, 30);
             textBox5.TabIndex = 11;
+            textBox5.KeyPress += textBox5_KeyPress;
             // 
             // button2
             // 
@@ -80,17 +80,16 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(185, 124);
+            label1.Location = new Point(227, 112);
             label1.Name = "label1";
-            label1.Size = new Size(63, 24);
+            label1.Size = new Size(46, 24);
             label1.TabIndex = 13;
             label1.Text = "物理";
-            label1.Click += label1_Click;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(377, 124);
+            label2.Location = new Point(377, 112);
             label2.Name = "label2";
             label2.Size = new Size(46, 24);
             label2.TabIndex = 14;
@@ -99,9 +98,9 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(538, 124);
+            label3.Location = new Point(524, 112);
             label3.Name = "label3";
-            label3.Size = new Size(63, 24);
+            label3.Size = new Size(46, 24);
             label3.TabIndex = 15;
             label3.Text = "生物";
             // 
@@ -114,22 +113,41 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(button2);
             Controls.Add(textBox5);
+            Controls.Add(button2);
             Controls.Add(label4);
             Controls.Add(button1);
             Name = "ApplicationForm";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Form1";
             ResumeLayout(false);
             PerformLayout();
+        }
+
+        private void textBox5_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+        public void setLable(String text1, String text2, String text3)
+        {
+            this.label1.Text = text1;
+            this.label1.Update();
+            this.label2.Text = text2;
+            this.label2.Update();
+            this.label3.Text = text3;
+            this.label3.Update();
         }
 
         #endregion
 
         private Button button1;
-        private Label label4;
         private TextBox textBox5;
         private Button button2;
+        private Label label4;
+        private Label label1;
+        private Label label2;
+        private Label label3;
     }
 }
