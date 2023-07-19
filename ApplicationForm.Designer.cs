@@ -36,22 +36,24 @@
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
+            button3 = new Button();
             SuspendLayout();
             // 
             // button1
             // 
             button1.BackColor = SystemColors.ButtonHighlight;
-            button1.Location = new Point(344, 348);
+            button1.Location = new Point(310, 361);
             button1.Name = "button1";
-            button1.Size = new Size(112, 34);
+            button1.Size = new Size(180, 62);
             button1.TabIndex = 0;
             button1.Text = "生成";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += Botton1_Click;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(359, 202);
+            label4.Location = new Point(359, 184);
             label4.Name = "label4";
             label4.Size = new Size(82, 24);
             label4.TabIndex = 10;
@@ -60,7 +62,7 @@
             // textBox5
             // 
             textBox5.BackColor = SystemColors.Window;
-            textBox5.Location = new Point(344, 247);
+            textBox5.Location = new Point(344, 221);
             textBox5.Name = "textBox5";
             textBox5.Size = new Size(112, 30);
             textBox5.TabIndex = 11;
@@ -80,6 +82,7 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.BackColor = SystemColors.InactiveBorder;
             label1.Location = new Point(227, 112);
             label1.Name = "label1";
             label1.Size = new Size(46, 24);
@@ -89,6 +92,7 @@
             // label2
             // 
             label2.AutoSize = true;
+            label2.BackColor = SystemColors.InactiveBorder;
             label2.Location = new Point(377, 112);
             label2.Name = "label2";
             label2.Size = new Size(46, 24);
@@ -98,11 +102,23 @@
             // label3
             // 
             label3.AutoSize = true;
+            label3.BackColor = SystemColors.InactiveBorder;
             label3.Location = new Point(524, 112);
             label3.Name = "label3";
             label3.Size = new Size(46, 24);
             label3.TabIndex = 15;
             label3.Text = "生物";
+            // 
+            // button3
+            // 
+            button3.BackColor = SystemColors.ButtonHighlight;
+            button3.Location = new Point(325, 286);
+            button3.Name = "button3";
+            button3.Size = new Size(150, 34);
+            button3.TabIndex = 16;
+            button3.Text = "选择专业意愿";
+            button3.UseVisualStyleBackColor = false;
+            button3.Click += Botton3_Click;
             // 
             // ApplicationForm
             // 
@@ -110,6 +126,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Info;
             ClientSize = new Size(800, 450);
+            Controls.Add(button3);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -149,5 +166,6 @@
         private Label label1;
         private Label label2;
         private Label label3;
+        private Button button3;
     }
 }

@@ -8,12 +8,12 @@
         /// </summary>
         /// 
         public static ApplicationForm mainform = new ApplicationForm();
+        public static Student student = new Student();
 
         [STAThread]
         static void Main()
         {
             Application.Run(mainform);
-            Student student = new Student();
         }
     }
 
