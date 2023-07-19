@@ -26,6 +26,7 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
+        /// 
         private void InitializeComponent()
         {
             checkedListBox1 = new CheckedListBox();
@@ -50,6 +51,7 @@
             checkedListBox1.Name = "checkedListBox1";
             checkedListBox1.Size = new Size(87, 301);
             checkedListBox1.TabIndex = 0;
+            checkedListBox1.ItemCheck += ItemCheck1;
             // 
             // type1
             // 
@@ -80,6 +82,7 @@
             checkedListBox2.Name = "checkedListBox2";
             checkedListBox2.Size = new Size(82, 301);
             checkedListBox2.TabIndex = 3;
+            checkedListBox2.ItemCheck += ItemCheck2;
             // 
             // type3
             // 
@@ -100,6 +103,7 @@
             checkedListBox3.Name = "checkedListBox3";
             checkedListBox3.Size = new Size(158, 301);
             checkedListBox3.TabIndex = 5;
+            checkedListBox3.ItemCheck += ItemCheck3;
             // 
             // type4
             // 
@@ -120,6 +124,7 @@
             checkedListBox4.Name = "checkedListBox4";
             checkedListBox4.Size = new Size(120, 301);
             checkedListBox4.TabIndex = 7;
+            checkedListBox4.ItemCheck += ItemCheck4;
             // 
             // type5
             // 
@@ -140,6 +145,7 @@
             checkedListBox5.Name = "checkedListBox5";
             checkedListBox5.Size = new Size(114, 301);
             checkedListBox5.TabIndex = 9;
+            checkedListBox5.ItemCheck += ItemCheck5;
             // 
             // confirmwish
             // 

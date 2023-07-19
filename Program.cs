@@ -1,4 +1,6 @@
-﻿namespace Gaokao
+﻿using System.Runtime.InteropServices;
+
+namespace Gaokao
 
 {
     internal static class Program
@@ -10,19 +12,23 @@
         public static ApplicationForm mainform = new ApplicationForm();
         public static Student student = new Student();
 
+        [DllImport("kernel32.dll")]
+        public static extern bool AllocConsole();
+        [DllImport("kernel32.dll")]
+        static extern bool FreeConsole();
         [STAThread]
         static void Main()
         {
+            AllocConsole();
             Application.Run(mainform);
+            FreeConsole();
         }
     }
 
     public class Student
     {
-        public String subject1;
-        public String subject2;
-        public String subject3;
-        public String wish;
+        public List<String> subjects = new List<String>();
+        public List<String> wishes = new List<String>();
         public int score;
         public int rank;
     }

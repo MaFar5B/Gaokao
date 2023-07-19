@@ -29,27 +29,27 @@
 
         private void InitializeComponent()
         {
-            button1 = new Button();
+            Generate = new Button();
             label4 = new Label();
             textBox5 = new TextBox();
             button2 = new Button();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
-            button3 = new Button();
+            WishSelect = new Button();
             SuspendLayout();
             // 
-            // button1
+            // Generate
             // 
-            button1.BackColor = SystemColors.ButtonHighlight;
-            button1.Cursor = Cursors.Hand;
-            button1.Location = new Point(310, 361);
-            button1.Name = "button1";
-            button1.Size = new Size(180, 62);
-            button1.TabIndex = 0;
-            button1.Text = "生成";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += Botton1_Click;
+            Generate.BackColor = SystemColors.ButtonHighlight;
+            Generate.Cursor = Cursors.Hand;
+            Generate.Location = new Point(310, 361);
+            Generate.Name = "Generate";
+            Generate.Size = new Size(180, 62);
+            Generate.TabIndex = 0;
+            Generate.Text = "生成";
+            Generate.UseVisualStyleBackColor = false;
+            Generate.Click += Generate_Click;
             // 
             // label4
             // 
@@ -111,17 +111,17 @@
             label3.TabIndex = 15;
             label3.Text = "生物";
             // 
-            // button3
+            // WishSelect
             // 
-            button3.BackColor = SystemColors.ButtonHighlight;
-            button3.Cursor = Cursors.Hand;
-            button3.Location = new Point(325, 286);
-            button3.Name = "button3";
-            button3.Size = new Size(150, 34);
-            button3.TabIndex = 16;
-            button3.Text = "选择专业意愿";
-            button3.UseVisualStyleBackColor = false;
-            button3.Click += Botton3_Click;
+            WishSelect.BackColor = SystemColors.ButtonHighlight;
+            WishSelect.Cursor = Cursors.Hand;
+            WishSelect.Location = new Point(325, 286);
+            WishSelect.Name = "WishSelect";
+            WishSelect.Size = new Size(150, 34);
+            WishSelect.TabIndex = 16;
+            WishSelect.Text = "选择专业意愿";
+            WishSelect.UseVisualStyleBackColor = false;
+            WishSelect.Click += WIshSelect_Click;
             // 
             // ApplicationForm
             // 
@@ -129,14 +129,14 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Info;
             ClientSize = new Size(800, 450);
-            Controls.Add(button3);
+            Controls.Add(WishSelect);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(textBox5);
             Controls.Add(button2);
             Controls.Add(label4);
-            Controls.Add(button1);
+            Controls.Add(Generate);
             Name = "ApplicationForm";
             StartPosition = FormStartPosition.CenterScreen;
             ResumeLayout(false);
@@ -162,13 +162,13 @@
 
         #endregion
 
-        private Button button1;
+        private Button Generate;
         private TextBox textBox5;
         private Button button2;
         private Label label4;
         private Label label1;
         private Label label2;
         private Label label3;
-        private Button button3;
+        private Button WishSelect;
     }
 }
