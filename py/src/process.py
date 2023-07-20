@@ -28,3 +28,21 @@ def advise(rank):
         print(data1.iloc[18190:18287, 2:5])
     else:
         print(data1.iloc[n-48:n+48,2:5])
+
+###读入分数获取学校（一刀切简单衔接版）
+import pandas as pd
+
+def get_rank_out(grade_in):
+    all_rank = pd.read_csv(r"D:\2023.Gaokao\Data\grade_line.csv", encoding='gbk')
+    rank_out = all_rank[all_rank['grade'] == int(grade_in)]
+    return rank_out['rank'].astype(str).iloc[0]
+
+grade_in = 599
+rank_in = get_rank_out(grade_in)
+
+all_school=pd.read_csv(r"D:\2023.Gaokao\Data\rank .csv", encoding='gbk')
+school_out = all_school[(all_school['rank'] > int(rank_in)) & (all_school['rank'] < int(rank_in) + 100)]
+
+print(school_out.head())
+
+ 
