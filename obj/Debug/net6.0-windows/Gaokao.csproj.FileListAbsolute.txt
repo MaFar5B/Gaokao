@@ -17,5 +17,3 @@ G:\Documents\GitHub\Gaokao\obj\Debug\net6.0-windows\Gaokao.genruntimeconfig.cach
 G:\Documents\GitHub\Gaokao\obj\Debug\net6.0-windows\ref\Gaokao.dll
 G:\Documents\GitHub\Gaokao\obj\Debug\net6.0-windows\Gaokao.SubjectForm.resources
 G:\Documents\GitHub\Gaokao\obj\Debug\net6.0-windows\Gaokao.WishForm.resources
-G:\Documents\GitHub\Gaokao\bin\Debug\net6.0-windows\Python.Runtime.dll
-G:\Documents\GitHub\Gaokao\obj\Debug\net6.0-windows\Gaokao.csproj.CopyComplete

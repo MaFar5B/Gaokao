@@ -4,7 +4,7 @@
 *.vsidx
 *pyc
 
-bin
-obj
-/.vs/
+bin/
+obj/
+.vs/
 __pycache__/
