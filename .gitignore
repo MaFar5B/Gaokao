@@ -4,8 +4,7 @@
 *.vsidx
 *pyc
 
-/bin
-/obj
-/.vs
-/__pycache__
-.vs/Gaokao/v17/.suo
+./bin/
+./obj/
+./.vs/
+./__pycache__/
