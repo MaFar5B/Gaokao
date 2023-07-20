@@ -7,5 +7,5 @@ import process
 
 if __name__ == '__main__':
     score = input()
-    print(process.getRank(score))
+    print(process.data1[process.data1["分数段"] == score].index)
     pass
