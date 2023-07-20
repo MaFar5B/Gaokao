@@ -6,5 +6,5 @@
 
 bin
 obj
-.vs/
+/.vs/
 __pycache__/
