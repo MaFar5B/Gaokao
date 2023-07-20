@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System.Diagnostics;
+using System.Windows.Forms;
 
 namespace Gaokao
 {
@@ -45,6 +46,7 @@ namespace Gaokao
                     wishform.full_wished();
                 }
                 Program.student.wishes = WishForm.WishList;
+                Program.student.setStudentRank();
             }
         }
 
