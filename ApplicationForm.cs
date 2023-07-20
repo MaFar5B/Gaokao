@@ -45,11 +45,6 @@ namespace Gaokao
                     wishform.full_wished();
                 }
                 Program.student.wishes = WishForm.WishList;
-                foreach (String wish in Program.student.wishes)
-                {
-                    Console.WriteLine(wish);
-                }
-                Console.WriteLine(Program.student.score);
             }
         }
 
