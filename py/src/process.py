@@ -7,26 +7,24 @@ warnings.filterwarnings('ignore')
 plt.rcParams["font.sans-serif"]=["SimHei"]
 plt.rcParams["axes.unicode_minus"]=False
 
-data1 = pd.read_csv(r"G:\Documents\GitHub\Gaokao\Data\grade_line.csv")
-
 #获取学生的位次
-def getRank(score):
-    index = data1[data1["分数段"] == score].index[0]
-    return data1["累计人数"][index]
+def getRank(score, data):
+    return data.loc[data['grade'] == score, 'rank'].values[0]
 
 #排名靠近专业及院校
 n = 0
-def advise(rank):
+def advise(rank, data):
     global n
-    for i in data1['投档最低位次']:
+    for i in data['投档最低位次']:
         n = n + 1
         if int(i) >= rank :
             break
     if n < 48:
-        print(data1.iloc[0:97,2:5])
+        print(data.iloc[0:97,2:5])
     if n > 18190:
-        print(data1.iloc[18190:18287, 2:5])
+        print(data.iloc[18190:18287, 2:5])
     else:
+<<<<<<< HEAD
         print(data1.iloc[n-48:n+48,2:5])
 
 ###读入分数获取学校（一刀切简单衔接版）
@@ -46,3 +44,7 @@ school_out = all_school[(all_school['rank'] > int(rank_in)) & (all_school['rank'
 print(school_out.head())
 
  
+=======
+        print(data.iloc[n-48:n+48,2:5])
+        
+>>>>>>> e6daa1cac7cb69b55b484e6554d6db65fba7f9e7
