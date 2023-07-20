@@ -1,4 +1,6 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Collections;
+using System.Diagnostics;
 using System.Runtime.InteropServices;
 
 namespace Gaokao
@@ -22,17 +24,6 @@ namespace Gaokao
         {
             AllocConsole();
             Application.Run(mainform);
-            Process process = new Process();
-            process.StartInfo.FileName = "python";
-            process.StartInfo.Arguments = "G:/Documents/GitHub/Gaokao/py/src/main.py";
-            process.StartInfo.UseShellExecute = false;
-            process.StartInfo.RedirectStandardOutput = false;
-            process.StartInfo.CreateNoWindow = true;
-            process.Start();
-            process.WaitForExit();
-            string input = process.ReadLine();
-            string output = process.StandardOutput.ReadToEnd();
-            student.rank = int.Parse(output);
             FreeConsole();
         }
     }
@@ -43,6 +34,25 @@ namespace Gaokao
         public List<String> wishes = new List<String>();
         public int score;
         public int rank;
+
+        public void setStudentRank()
+        {
+            Process process = new Process();
+            process.StartInfo.FileName = @"C:\Users\MaFar\AppData\Local\Programs\Python\Python311\python.exe";
+            process.StartInfo.Arguments = "G:/Documents/GitHub/Gaokao/py/src/main.py";
+            process.StartInfo.UseShellExecute = false;
+            process.StartInfo.RedirectStandardOutput = true;
+            process.StartInfo.CreateNoWindow = true;
+            process.StartInfo.RedirectStandardInput = true;
+            process.Start();
+            string input = "get_rank\n" + this.score.ToString();
+            process.StandardInput.WriteLine(input);
+            process.StandardInput.Flush();
+            process.StandardInput.Close();
+            string output = process.StandardOutput.ReadToEnd();
+            this.rank = int.Parse(output);
+            Console.WriteLine(this.rank);
+        }
     }
     
 }
