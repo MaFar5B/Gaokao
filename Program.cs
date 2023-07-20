@@ -45,12 +45,13 @@ namespace Gaokao
             process.StartInfo.CreateNoWindow = true;
             process.StartInfo.RedirectStandardInput = true;
             process.Start();
-            string input = this.score.ToString();
+            string input = "get_rank\n" + this.score.ToString();
             process.StandardInput.WriteLine(input);
             process.StandardInput.Flush();
             process.StandardInput.Close();
             string output = process.StandardOutput.ReadToEnd();
             this.rank = int.Parse(output);
+            Console.WriteLine(this.rank);
         }
     }
     

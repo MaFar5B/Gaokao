@@ -16,8 +16,10 @@ data1 = pd.read_csv(r"G:\Documents\GitHub\Gaokao\Data\grade_line.csv")
 data2 = pd.read_csv(r"G:\Documents\GitHub\Gaokao\Data\rank 2022.csv", encoding="gbk")
 
 if __name__ == '__main__':
-    score = input()
-    rank = process.get_rank(score, data1)
-    school_out = data2[(data2['rank'] > int(rank)) & (data2['rank'] < int(rank) + 100)]
-    print(rank)
+    request = input();
+    if(request == "get_rank"):
+        score = input()
+        rank = process.get_rank(score, data1)
+        school_out = data2[(data2['rank'] > int(rank)) & (data2['rank'] < int(rank) + 100)]
+        print(rank)
     pass
