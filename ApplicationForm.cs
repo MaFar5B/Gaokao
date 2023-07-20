@@ -30,7 +30,7 @@ namespace Gaokao
             {
                 MessageBox.Show("请输入高考分数！");
             }
-            else if (int.Parse(this.textBox5.Text) > 750)
+            else if (int.Parse(this.textBox5.Text) > 697 || int.Parse(this.textBox5.Text) < 150)
             {
                 MessageBox.Show("请输入正确的高考分数！");
             }
