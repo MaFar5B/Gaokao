@@ -10,3 +10,5 @@ obj/
 __pycache__/
 .vs/Gaokao/v17/.suo
 .vs/Gaokao/v17/.suo
+py/.project
+py/.pydevproject
