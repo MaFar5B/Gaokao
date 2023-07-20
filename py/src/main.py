@@ -13,7 +13,7 @@ warnings.filterwarnings('ignore')
 plt.rcParams["font.sans-serif"]=["SimHei"]
 plt.rcParams["axes.unicode_minus"]=False
 data1 = pd.read_csv(r"G:\Documents\GitHub\Gaokao\Data\grade_line.csv")
-data2 = pd.read_csv(r"G:\Documents\GitHub\Gaokao\Data\rank .csv", encoding="gbk")
+data2 = pd.read_csv(r"G:\Documents\GitHub\Gaokao\Data\rank 2022.csv", encoding="gbk")
 
 if __name__ == '__main__':
     score = input()
