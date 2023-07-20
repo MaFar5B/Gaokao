@@ -12,3 +12,5 @@ __pycache__/
 .vs/Gaokao/v17/.suo
 py/.project
 py/.pydevproject
+py/src/
+!py/src/*.py
