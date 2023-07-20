@@ -7,6 +7,7 @@ namespace Gaokao
     {
         public static SubjectForm subjectselectform = new SubjectForm();
         public static WishForm wishform = new WishForm();
+        public static ResultForm resultform = new ResultForm();
         public static bool Wish_Clicked = false;
         public ApplicationForm()
         {
@@ -36,17 +37,19 @@ namespace Gaokao
             }
             else
             {
+                Program.student.subjects.Clear();
                 Program.student.subjects.Add(this.label1.Text);
                 Program.student.subjects.Add(this.label2.Text);
                 Program.student.subjects.Add(this.label3.Text);
                 Program.student.score = int.Parse(this.textBox5.Text);
-                Program.student.subjects.Sort();
                 if (!Wish_Clicked)
                 {
                     wishform.full_wished();
                 }
                 Program.student.wishes = WishForm.WishList;
                 Program.student.setStudentRank();
+                resultform.changeText();
+                resultform.ShowDialog();
             }
         }
 
