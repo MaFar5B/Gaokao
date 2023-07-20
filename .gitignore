@@ -1,0 +1,10 @@
+*.sln
+*.csproj
+*.user
+*.vsidx
+*pyc
+
+bin
+obj
+/.vs/
+__pycache__/
