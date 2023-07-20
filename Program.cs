@@ -51,7 +51,6 @@ namespace Gaokao
             process.StandardInput.Close();
             string output = process.StandardOutput.ReadToEnd();
             this.rank = int.Parse(output);
-
         }
     }
     
