@@ -1,4 +1,5 @@
-﻿using System.Runtime.InteropServices;
+﻿using System.Diagnostics;
+using System.Runtime.InteropServices;
 
 namespace Gaokao
 
@@ -21,6 +22,17 @@ namespace Gaokao
         {
             AllocConsole();
             Application.Run(mainform);
+            Process process = new Process();
+            process.StartInfo.FileName = "python";
+            process.StartInfo.Arguments = "G:/Documents/GitHub/Gaokao/py/src/main.py";
+            process.StartInfo.UseShellExecute = false;
+            process.StartInfo.RedirectStandardOutput = false;
+            process.StartInfo.CreateNoWindow = true;
+            process.Start();
+            process.WaitForExit();
+            string input = process.ReadLine();
+            string output = process.StandardOutput.ReadToEnd();
+            student.rank = int.Parse(output);
             FreeConsole();
         }
     }
