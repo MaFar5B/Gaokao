@@ -16,7 +16,9 @@ data1 = pd.read_csv(r"G:\Documents\GitHub\Gaokao\Data\grade_line.csv")
 data2 = pd.read_csv(r"G:\Documents\GitHub\Gaokao\Data\rank 2022.csv", encoding="gbk")
 
 if __name__ == '__main__':
+    #输入要求
     request = input();
+    #根据分数获取排名
     if(request == "get_rank"):
         score = input()
         rank = process.get_rank(score, data1)
