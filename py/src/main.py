@@ -37,11 +37,18 @@ cinn = cin.split()
 #护理=501 基础医学=502 口腔=503 临床=504 药学=505 预防公卫=506 中医=507
 
 for major in cinn:
-    fl = pd.read_csv(f"D:\stuady\git\Gaokao\Data\sorts/{major}.csv")
-    n = 0
-    print(f"{major}：\n专业代号及名称  院校代号及名称  投档计划数  投档最低位次")
-    for i in fl["投档最低位次"]:
-        n = n + 1
-        if abs(i - grade_in) <= 1000:
-            date = fl.iloc[n:n+1,0:4]
-            print(date.to_string(header=False))
+    cinn = cin.split()
+    rep = []
+    eep = []
+    for major in cinn:
+        fl = pd.read_csv(f"D:\stuady\git\Gaokao\Data\sorts/{major}.csv")
+        n = 0
+        for i in fl["投档最低位次"]:
+            n = n + 1
+            if abs(i - grade_in) <= 1000:
+                date = fl.iloc[n:n + 1, 0:4]
+                rep.append(date.to_string(header=False))
+    for i in rep:
+        eep.append(i.split()[1:])
+    df = pd.DataFrame(eep, columns=["专业名称", "学校名称", "计划录取人数", "最低录取名次"])
+    df.to_csv('site.csv')
