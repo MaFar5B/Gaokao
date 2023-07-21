@@ -70,29 +70,94 @@ namespace Gaokao
             ApplicationForm.wishform.Hide();
         }
 
-        private void ItemCheck1(object sender, ItemCheckEventArgs e)
+        private void Changed1(object sender, EventArgs e)
         {
-            ((CheckedListBox)sender).SelectedItem = null;
+            if (this.All1.Checked)
+            {
+                for (int i = 0; i < this.checkedListBox1.Items.Count; i++)
+                {
+                    this.checkedListBox1.SetItemChecked(i, true);
+                }
+            }
+            else
+            {
+                for (int i = 0; i < this.checkedListBox1.Items.Count; i++)
+                {
+                    this.checkedListBox1.SetItemChecked(i, false);
+                }
+            }
         }
 
-        private void ItemCheck2(object sender, ItemCheckEventArgs e)
+        private void Changed2(object sender, EventArgs e)
         {
-            ((CheckedListBox)sender).SelectedItem = null;
+            if (this.All2.Checked)
+            {
+                for (int i = 0; i < this.checkedListBox2.Items.Count; i++)
+                {
+                    this.checkedListBox2.SetItemChecked(i, true);
+                }
+            }
+            else
+            {
+                for (int i = 0; i < this.checkedListBox2.Items.Count; i++)
+                {
+                    this.checkedListBox2.SetItemChecked(i, false);
+                }
+            }
         }
 
-        private void ItemCheck3(object sender, ItemCheckEventArgs e)
+        private void Changed3(object sender, EventArgs e)
         {
-            ((CheckedListBox)sender).SelectedItem = null;
+            if (this.All3.Checked)
+            {
+                for (int i = 0; i < this.checkedListBox3.Items.Count; i++)
+                {
+                    this.checkedListBox3.SetItemChecked(i, true);
+                }
+            }
+            else
+            {
+                for (int i = 0; i < this.checkedListBox3.Items.Count; i++)
+                {
+                    this.checkedListBox3.SetItemChecked(i, false);
+                }
+            }
         }
 
-        private void ItemCheck4(object sender, ItemCheckEventArgs e)
+        private void Changed4(object sender, EventArgs e)
         {
-            ((CheckedListBox)sender).SelectedItem = null;
+            if (this.All4.Checked)
+            {
+                for (int i = 0; i < this.checkedListBox4.Items.Count; i++)
+                {
+                    this.checkedListBox4.SetItemChecked(i, true);
+                }
+            }
+            else
+            {
+                for (int i = 0; i < this.checkedListBox4.Items.Count; i++)
+                {
+                    this.checkedListBox4.SetItemChecked(i, false);
+                }
+            }
         }
 
-        private void ItemCheck5(object sender, ItemCheckEventArgs e)
+        private void Changed5(object sender, EventArgs e)
         {
-            ((CheckedListBox)sender).SelectedItem = null;
+            if (this.All5.Checked)
+            {
+                for (int i = 0; i < this.checkedListBox5.Items.Count; i++)
+                {
+                    this.checkedListBox5.SetItemChecked(i, true);
+                }
+            }
+            else
+            {
+                for (int i = 0; i < this.checkedListBox5.Items.Count; i++)
+                {
+                    this.checkedListBox5.SetItemChecked(i, false);
+                }
+            }
         }
     }
 }
