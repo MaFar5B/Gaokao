@@ -46,15 +46,11 @@ if __name__ == '__main__':
             nearest_rows = fl.iloc[index1:index2]
             nearest_rows.to_csv(f"{Gaokao_path}\Data/result.csv",mode='a',header=False,index=False)
 
-        # df = pd.read_csv(f"{Gaokao_path}\Data/result.csv")
-        # df.to_csv((f"{Gaokao_path}\Data/results.csv"))
-
-            index = np.searchsorted(fl['投档最低位次'],rank,side='left')
-            start_index = max(0,index - 7)
-            end_index = min(index + 13 , len(fl['投档最低位次']))
-            nearest_rows = fl.iloc[start_index:end_index]
+            # index = np.searchsorted(fl['投档最低位次'],rank,side='left')
+            # start_index = max(0,index - 7)
+            # end_index = min(index + 13 , len(fl['投档最低位次']))
+            nearest_rows = fl.iloc[index1:index2]
             nearest_rows.to_csv(f"{Gaokao_path}\Data/result.csv",mode='a')
-        print("done")
 
 
 
