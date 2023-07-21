@@ -40,6 +40,11 @@
             type5 = new Label();
             checkedListBox5 = new CheckedListBox();
             confirmwish = new Button();
+            All1 = new CheckBox();
+            All2 = new CheckBox();
+            All3 = new CheckBox();
+            All4 = new CheckBox();
+            All5 = new CheckBox();
             SuspendLayout();
             // 
             // checkedListBox1
@@ -47,7 +52,7 @@
             checkedListBox1.CheckOnClick = true;
             checkedListBox1.FormattingEnabled = true;
             checkedListBox1.Items.AddRange(new object[] { "保险", "财政", "管理", "会计", "金融", "经济", "贸易", "信管", "营销" });
-            checkedListBox1.Location = new Point(12, 45);
+            checkedListBox1.Location = new Point(12, 79);
             checkedListBox1.Name = "checkedListBox1";
             checkedListBox1.Size = new Size(87, 301);
             checkedListBox1.TabIndex = 0;
@@ -78,7 +83,7 @@
             checkedListBox2.CheckOnClick = true;
             checkedListBox2.FormattingEnabled = true;
             checkedListBox2.Items.AddRange(new object[] { "大气", "地理", "地质", "化学", "力学", "农学", "生物", "食品", "数学", "统计", "物理" });
-            checkedListBox2.Location = new Point(128, 45);
+            checkedListBox2.Location = new Point(128, 79);
             checkedListBox2.Name = "checkedListBox2";
             checkedListBox2.Size = new Size(82, 301);
             checkedListBox2.TabIndex = 3;
@@ -99,7 +104,7 @@
             checkedListBox3.CheckOnClick = true;
             checkedListBox3.FormattingEnabled = true;
             checkedListBox3.Items.AddRange(new object[] { "材料", "城市规划", "电气自动化", "电子", "风光园林", "工业", "光学", "化工", "机械", "计算机", "建筑", "能源", "软件", "生物工程", "石油", "通信", "土木" });
-            checkedListBox3.Location = new Point(249, 45);
+            checkedListBox3.Location = new Point(249, 79);
             checkedListBox3.Name = "checkedListBox3";
             checkedListBox3.Size = new Size(158, 301);
             checkedListBox3.TabIndex = 5;
@@ -120,7 +125,7 @@
             checkedListBox4.CheckOnClick = true;
             checkedListBox4.FormattingEnabled = true;
             checkedListBox4.Items.AddRange(new object[] { "广告", "汉语", "教育", "历史", "社会", "心理", "新闻传媒", "英语", "哲学", "政治" });
-            checkedListBox4.Location = new Point(448, 45);
+            checkedListBox4.Location = new Point(448, 79);
             checkedListBox4.Name = "checkedListBox4";
             checkedListBox4.Size = new Size(120, 301);
             checkedListBox4.TabIndex = 7;
@@ -141,7 +146,7 @@
             checkedListBox5.CheckOnClick = true;
             checkedListBox5.FormattingEnabled = true;
             checkedListBox5.Items.AddRange(new object[] { "护理", "基础医学", "口腔", "临床", "药学", "预防公卫", "中医" });
-            checkedListBox5.Location = new Point(617, 45);
+            checkedListBox5.Location = new Point(617, 79);
             checkedListBox5.Name = "checkedListBox5";
             checkedListBox5.Size = new Size(114, 301);
             checkedListBox5.TabIndex = 9;
@@ -150,7 +155,7 @@
             // confirmwish
             // 
             confirmwish.BackColor = SystemColors.GradientInactiveCaption;
-            confirmwish.Location = new Point(306, 370);
+            confirmwish.Location = new Point(301, 411);
             confirmwish.Name = "confirmwish";
             confirmwish.Size = new Size(154, 44);
             confirmwish.TabIndex = 10;
@@ -158,12 +163,67 @@
             confirmwish.UseVisualStyleBackColor = false;
             confirmwish.Click += Confirm_Wish;
             // 
+            // All1
+            // 
+            All1.AutoSize = true;
+            All1.Location = new Point(12, 45);
+            All1.Name = "All1";
+            All1.Size = new Size(72, 28);
+            All1.TabIndex = 11;
+            All1.Text = "全选";
+            All1.UseVisualStyleBackColor = true;
+            // 
+            // All2
+            // 
+            All2.AutoSize = true;
+            All2.Location = new Point(128, 45);
+            All2.Name = "All2";
+            All2.Size = new Size(72, 28);
+            All2.TabIndex = 12;
+            All2.Text = "全选";
+            All2.UseVisualStyleBackColor = true;
+            // 
+            // All3
+            // 
+            All3.AutoSize = true;
+            All3.Location = new Point(249, 45);
+            All3.Name = "All3";
+            All3.Size = new Size(72, 28);
+            All3.TabIndex = 13;
+            All3.Text = "全选";
+            All3.UseVisualStyleBackColor = true;
+            // 
+            // All4
+            // 
+            All4.AutoSize = true;
+            All4.Location = new Point(448, 45);
+            All4.Name = "All4";
+            All4.Size = new Size(72, 28);
+            All4.TabIndex = 14;
+            All4.Text = "全选";
+            All4.UseVisualStyleBackColor = true;
+            // 
+            // All5
+            // 
+            All5.AutoSize = true;
+            All5.Location = new Point(617, 45);
+            All5.Name = "All5";
+            All5.Size = new Size(72, 28);
+            All5.TabIndex = 15;
+            All5.Text = "全选";
+            All5.UseVisualStyleBackColor = true;
+            // 
             // WishForm
             // 
             AutoScaleDimensions = new SizeF(11F, 24F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaption;
-            ClientSize = new Size(744, 442);
+            ClientSize = new Size(744, 488);
+            Controls.Add(All5);
+            Controls.Add(All4);
+            Controls.Add(All3);
+            Controls.Add(All2);
+            Controls.Add(All1);
             Controls.Add(confirmwish);
             Controls.Add(checkedListBox5);
             Controls.Add(type5);
@@ -196,5 +256,10 @@
         private Label type5;
         private CheckedListBox checkedListBox5;
         private Button confirmwish;
+        private CheckBox All1;
+        private CheckBox All2;
+        private CheckBox All3;
+        private CheckBox All4;
+        private CheckBox All5;
     }
 }
