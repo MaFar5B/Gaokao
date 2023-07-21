@@ -42,11 +42,11 @@ namespace Gaokao
             process.StartInfo.Arguments = "G:/Documents/GitHub/Gaokao/py/src/main.py";
             process.StartInfo.UseShellExecute = false;
             process.StartInfo.RedirectStandardOutput = true;
-            process.StartInfo.CreateNoWindow = true;
+            process.StartInfo.CreateNoWindow = false;
             process.StartInfo.RedirectStandardInput = true;
             process.Start();
-            string input = "get_rank\n" + this.score.ToString();
-            process.StandardInput.WriteLine(input);
+            process.StandardInput.WriteLine("get_rank");
+            process.StandardInput.WriteLine(this.score.ToString());
             process.StandardInput.Flush();
             process.StandardInput.Close();
             string output = process.StandardOutput.ReadToEnd();

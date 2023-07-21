@@ -10,20 +10,18 @@ import matplotlib.pyplot as plt
 import warnings
 import os
 
-file_path = os.getcwd()
+file_path = os.path.realpath(__file__)
 py_path = os.path.dirname(os.path.abspath(file_path))
-Gaokao_path = os.path.dirname(py_path)
+Gaokao_path = os.path.dirname(os.path.dirname(py_path))
 warnings.filterwarnings('ignore')
 plt.rcParams["font.sans-serif"]=["SimHei"]
 plt.rcParams["axes.unicode_minus"]=False
-data1 = pd.read_csv(f"{Gaokao_path}\Data\grade_line.csv")
+data1 = pd.read_csv(f"{Gaokao_path}\Data/grade_line.csv")
 
 if __name__ == '__main__':
     #输入要求
     request = input();
     #根据分数获取排名
-    rank = ""
-    wish = ""
     if(request == "get_rank"):
         score = input()
         rank = process.get_rank(score, data1)
@@ -54,17 +52,4 @@ if __name__ == '__main__':
         df = pd.DataFrame(eep, columns=["专业名称", "学校名称", "计划录取人数", "最低录取名次"])
         df.to_csv(f"{Gaokao_path}\Data/result.csv")
 
-        
-
-
-
-
-
-#保险=101 财政=102 管理=103 会计=104 金融=105 经济=106 贸易=107 信管=108 营销=109
-#大气=201 地理=202 地质=203 化学=204 力学=205 农学=206 生物=207 食品=208 数学=209 统计=210
-#物理=211
-#材料=301 城市规划=302 电气自动化=303 电子=304 风光园林=305 工业=306 光学=307 化工=308 机械=309
-#计算机=310 建筑=311 软件=312 生物工程=313 石油=314 通讯=315 土木=316
-#广告=401 汉语=402 教育=4.3 历史=404 社会=405 心理=406 新闻传媒=407 英语=408 哲学=409 政治=410
-#护理=501 基础医学=502 口腔=503 临床=504 药学=505 预防公卫=506 中医=507
 
