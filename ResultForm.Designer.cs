@@ -37,7 +37,7 @@
             // grade
             // 
             grade.AutoSize = true;
-            grade.Location = new Point(217, 33);
+            grade.Location = new Point(194, 33);
             grade.Name = "grade";
             grade.Size = new Size(64, 24);
             grade.TabIndex = 0;
@@ -55,7 +55,7 @@
             // level
             // 
             level.AutoSize = true;
-            level.Location = new Point(217, 89);
+            level.Location = new Point(194, 89);
             level.Name = "level";
             level.Size = new Size(64, 24);
             level.TabIndex = 2;

@@ -52,6 +52,36 @@ namespace Gaokao
             string output = process.StandardOutput.ReadToEnd();
             this.rank = int.Parse(output);
         }
+
+        public void generate()
+        {
+            Process process = new Process();
+            process.StartInfo.FileName = @"C:\Users\MaFar\AppData\Local\Programs\Python\Python311\python.exe";
+            process.StartInfo.Arguments = "G:/Documents/GitHub/Gaokao/py/src/main.py";
+            process.StartInfo.UseShellExecute = false;
+            process.StartInfo.RedirectStandardOutput = true;
+            process.StartInfo.CreateNoWindow = false;
+            process.StartInfo.RedirectStandardInput = true;
+            process.Start();
+            string input = "generate\n";
+            input += this.rank.ToString() + "\n";
+            int count = 0;
+            foreach(string wish in this.wishes)
+            {
+                if(count < this.wishes.Count - 1)
+                {
+                    input += wish + " ";
+                    count++;
+                } else
+                {
+                    input += wish;
+                }
+            }
+            process.StandardInput.WriteLine(input);
+            process.StandardInput.WriteLine(this.score.ToString());
+            process.StandardInput.Flush();
+            process.StandardInput.Close();
+        }
     }
     
 }

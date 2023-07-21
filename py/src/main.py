@@ -29,7 +29,6 @@ if __name__ == '__main__':
     if(request == "generate"):
         rank = input()
         wish = input()
-        grade_in = rank
         cinn = wish.split()
         for major in cinn:
             cinn = wish.split()
@@ -40,7 +39,7 @@ if __name__ == '__main__':
                 n = 0
                 for i in fl["投档最低位次"]:
                     n = n + 1
-                    if abs(i - int(grade_in)) <= 1000:
+                    if abs(int(i) - int(rank)) <= 1000:
                         date = fl.iloc[n:n + 1, 0:4]
                         rep.append(date.to_string(header=False))
             for i in rep:
