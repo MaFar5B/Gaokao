@@ -56,7 +56,6 @@
             checkedListBox1.Name = "checkedListBox1";
             checkedListBox1.Size = new Size(87, 301);
             checkedListBox1.TabIndex = 0;
-            checkedListBox1.ItemCheck += ItemCheck1;
             // 
             // type1
             // 
@@ -87,7 +86,6 @@
             checkedListBox2.Name = "checkedListBox2";
             checkedListBox2.Size = new Size(82, 301);
             checkedListBox2.TabIndex = 3;
-            checkedListBox2.ItemCheck += ItemCheck2;
             // 
             // type3
             // 
@@ -108,7 +106,6 @@
             checkedListBox3.Name = "checkedListBox3";
             checkedListBox3.Size = new Size(158, 301);
             checkedListBox3.TabIndex = 5;
-            checkedListBox3.ItemCheck += ItemCheck3;
             // 
             // type4
             // 
@@ -129,7 +126,6 @@
             checkedListBox4.Name = "checkedListBox4";
             checkedListBox4.Size = new Size(120, 301);
             checkedListBox4.TabIndex = 7;
-            checkedListBox4.ItemCheck += ItemCheck4;
             // 
             // type5
             // 
@@ -150,7 +146,6 @@
             checkedListBox5.Name = "checkedListBox5";
             checkedListBox5.Size = new Size(114, 301);
             checkedListBox5.TabIndex = 9;
-            checkedListBox5.ItemCheck += ItemCheck5;
             // 
             // confirmwish
             // 
@@ -172,6 +167,7 @@
             All1.TabIndex = 11;
             All1.Text = "全选";
             All1.UseVisualStyleBackColor = true;
+            All1.CheckStateChanged += Changed1;
             // 
             // All2
             // 
@@ -182,6 +178,7 @@
             All2.TabIndex = 12;
             All2.Text = "全选";
             All2.UseVisualStyleBackColor = true;
+            All2.CheckStateChanged += Changed2;
             // 
             // All3
             // 
@@ -192,6 +189,7 @@
             All3.TabIndex = 13;
             All3.Text = "全选";
             All3.UseVisualStyleBackColor = true;
+            All3.CheckStateChanged += Changed3;
             // 
             // All4
             // 
@@ -202,6 +200,7 @@
             All4.TabIndex = 14;
             All4.Text = "全选";
             All4.UseVisualStyleBackColor = true;
+            All4.CheckStateChanged += Changed4;
             // 
             // All5
             // 
@@ -212,6 +211,7 @@
             All5.TabIndex = 15;
             All5.Text = "全选";
             All5.UseVisualStyleBackColor = true;
+            All5.CheckStateChanged += Changed5;
             // 
             // WishForm
             // 
