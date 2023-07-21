@@ -52,7 +52,8 @@ if __name__ == '__main__':
                 eep.append(t)
                 eep.append(t)
         df = pd.DataFrame(eep, columns=["专业名称", "学校名称", "计划录取人数", "最低录取名次"])
-        df.to_csv(f"{Gaokao_path}\Data\result.csv")
+        df.to_csv(f"{Gaokao_path}\\Data\\result.csv")
+
         
 
 
