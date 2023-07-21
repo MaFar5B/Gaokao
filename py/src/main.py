@@ -8,12 +8,15 @@ import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 import warnings
+import os
 
+file_path = os.getcwd()
+py_path = os.path.dirname(os.path.abspath(file_path))
+Gaokao_path = os.path.dirname(py_path)
 warnings.filterwarnings('ignore')
 plt.rcParams["font.sans-serif"]=["SimHei"]
 plt.rcParams["axes.unicode_minus"]=False
-data1 = pd.read_csv(r"G:\Documents\GitHub\Gaokao\Data\grade_line.csv")
-data2 = pd.read_csv(r"G:\Documents\GitHub\Gaokao\Data\rank 2022.csv", encoding="gbk")
+data1 = pd.read_csv(f"{Gaokao_path}\Data\grade_line.csv")
 
 if __name__ == '__main__':
     #输入要求
@@ -25,21 +28,21 @@ if __name__ == '__main__':
         score = input()
         rank = process.get_rank(score, data1)
         print(rank)
-    if(request == "input_wish"):
+    if(request == "generate"):
+        rank = input()
         wish = input()
         grade_in = rank
         cinn = wish.split()
-    if(request == "generate"):
         for major in cinn:
             cinn = wish.split()
             rep = []
             eep = []
             for major in cinn:
-                fl = pd.read_csv(f"D:\stuady\git\Gaokao\Data\sorts/{major}.csv")
+                fl = pd.read_csv(f"{Gaokao_path}\Data\sorts/{major}.csv")
                 n = 0
                 for i in fl["投档最低位次"]:
                     n = n + 1
-                    if abs(i - grade_in) <= 1000:
+                    if abs(i - int(grade_in)) <= 1000:
                         date = fl.iloc[n:n + 1, 0:4]
                         rep.append(date.to_string(header=False))
             for i in rep:
@@ -49,7 +52,7 @@ if __name__ == '__main__':
                 eep.append(t)
                 eep.append(t)
         df = pd.DataFrame(eep, columns=["专业名称", "学校名称", "计划录取人数", "最低录取名次"])
-        df.to_csv('site.csv')
+        df.to_csv(f"{Gaokao_path}\Data\result.csv")
         
 
 
