@@ -36,21 +36,11 @@ if __name__ == '__main__':
         headers = [["专业名称"],["学校名称"],["计划录取人数"],["最低录取名次"]]
         for major in cinn:
             fl = pd.read_csv(f"{Gaokao_path}\Data\sorts/{major}.csv")
-
-            # rank1 = max(0,rank - 3000)
-            # rank2 = min(rank + 3000,len(fl['投档最低位次']))
             index1 = np.searchsorted(fl['投档最低位次'],rank - 3000,side='left')
             index2 = np.searchsorted(fl['投档最低位次'],rank + 3000,side='left')
-            # start_index = max(0,index - 7)
-            # end_index = min(index + 13 , len(fl['投档最低位次']))
             nearest_rows = fl.iloc[index1:index2]
             nearest_rows.to_csv(f"{Gaokao_path}\Data/result.csv",mode='a',header=False,index=False)
 
-            # index = np.searchsorted(fl['投档最低位次'],rank,side='left')
-            # start_index = max(0,index - 7)
-            # end_index = min(index + 13 , len(fl['投档最低位次']))
-            nearest_rows = fl.iloc[index1:index2]
-            nearest_rows.to_csv(f"{Gaokao_path}\Data/result.csv",mode='a')
 
 
 
