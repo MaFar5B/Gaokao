@@ -21,25 +21,40 @@ data1 = pd.read_csv(f"{Gaokao_path}\Data/grade_line.csv")
 
 if __name__ == '__main__':
     #输入要求
-    request = input();
+    request = input()
     #根据分数获取排名
     if(request == "get_rank"):
         score = input()
         rank = process.get_rank(score, data1)
         print(rank)
     if(request == "generate"):
-        rank = input()
+        rank = int(input())
         wish = input()
         cinn = wish.split()
         kong = pd.DataFrame()
         kong.to_csv(f"{Gaokao_path}\Data/result.csv")
+        headers = [["专业名称"],["学校名称"],["计划录取人数"],["最低录取名次"]]
         for major in cinn:
             fl = pd.read_csv(f"{Gaokao_path}\Data\sorts/{major}.csv")
+
+            # rank1 = max(0,rank - 3000)
+            # rank2 = min(rank + 3000,len(fl['投档最低位次']))
+            index1 = np.searchsorted(fl['投档最低位次'],rank - 3000,side='left')
+            index2 = np.searchsorted(fl['投档最低位次'],rank + 3000,side='left')
+            # start_index = max(0,index - 7)
+            # end_index = min(index + 13 , len(fl['投档最低位次']))
+            nearest_rows = fl.iloc[index1:index2]
+            nearest_rows.to_csv(f"{Gaokao_path}\Data/result.csv",mode='a',header=False,index=False)
+
+        # df = pd.read_csv(f"{Gaokao_path}\Data/result.csv")
+        # df.to_csv((f"{Gaokao_path}\Data/results.csv"))
+
             index = np.searchsorted(fl['投档最低位次'],rank,side='left')
             start_index = max(0,index - 7)
             end_index = min(index + 13 , len(fl['投档最低位次']))
             nearest_rows = fl.iloc[start_index:end_index]
             nearest_rows.to_csv(f"{Gaokao_path}\Data/result.csv",mode='a')
+        print("done")
 
 
 
