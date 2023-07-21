@@ -31,30 +31,16 @@ if __name__ == '__main__':
         rank = input()
         wish = input()
         cinn = wish.split()
+        kong = pd.DataFrame()
+        kong.to_csv(f"{Gaokao_path}\Data/result.csv")
         for major in cinn:
-            rep = []
             fl = pd.read_csv(f"{Gaokao_path}\Data\sorts/{major}.csv")
-                # n = 0
-                # for i in fl["投档最低位次"]:
-                #     n = n + 1
-                #     if abs(int(i) - int(rank)) <= 1000:
-                #         date = fl.iloc[n:n + 1, 0:4]
-                #         rep.append(date.to_string(header=False))
             index = np.searchsorted(fl['投档最低位次'],rank,side='left')
             start_index = max(0,index - 7)
-            end_index = min(index + 8 , len(fl['投档最低位次']))
+            end_index = min(index + 13 , len(fl['投档最低位次']))
             nearest_rows = fl.iloc[start_index:end_index]
-            rep.append(nearest_rows.to_string(header=False))
-            # rep[0].split("\n")
-            print(rep)
-        #     eep = []
-        #     for i in nearest_rows:
-        #         t = i.split()[1:]
-        #         t[0] = t[0][2:]
-        #         t[1] = t[1][4:]
-        #         eep.append(t)
-        #         eep.append(t)
-        # df = pd.DataFrame(eep, columns=["专业名称", "学校名称", "计划录取人数", "最低录取名次"])
-        # df.to_csv(f"{Gaokao_path}\Data/result.csv")
+            nearest_rows.to_csv(f"{Gaokao_path}\Data/result.csv",mode='a')
+
+
 
 
