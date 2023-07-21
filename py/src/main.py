@@ -40,6 +40,7 @@ if __name__ == '__main__':
             end_index = min(index + 13 , len(fl['投档最低位次']))
             nearest_rows = fl.iloc[start_index:end_index]
             nearest_rows.to_csv(f"{Gaokao_path}\Data/result.csv",mode='a')
+        print("done")
 
 
 
