@@ -63,7 +63,7 @@ namespace Gaokao
             {
                 WishList.Add(item.ToString());
             }
-            if(WishList.Count == 0)
+            if (WishList.Count == 0)
             {
                 this.full_wished();
             }

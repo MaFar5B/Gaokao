@@ -175,6 +175,7 @@
             Controls.Add(type2);
             Controls.Add(type1);
             Controls.Add(checkedListBox1);
+            MaximizeBox = false;
             Name = "WishForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "专业意愿选择";

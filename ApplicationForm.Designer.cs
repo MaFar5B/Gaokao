@@ -137,6 +137,7 @@
             Controls.Add(button2);
             Controls.Add(label4);
             Controls.Add(Generate);
+            MaximizeBox = false;
             Name = "ApplicationForm";
             StartPosition = FormStartPosition.CenterScreen;
             ResumeLayout(false);

@@ -15,7 +15,7 @@ namespace Gaokao
         public ResultForm()
         {
             InitializeComponent();
-            
+
         }
 
     }

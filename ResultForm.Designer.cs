@@ -37,7 +37,7 @@
             // grade
             // 
             grade.AutoSize = true;
-            grade.Location = new Point(256, 33);
+            grade.Location = new Point(217, 33);
             grade.Name = "grade";
             grade.Size = new Size(64, 24);
             grade.TabIndex = 0;
@@ -46,7 +46,7 @@
             // subjects
             // 
             subjects.AutoSize = true;
-            subjects.Location = new Point(542, 33);
+            subjects.Location = new Point(540, 33);
             subjects.Name = "subjects";
             subjects.Size = new Size(64, 24);
             subjects.TabIndex = 1;
@@ -55,7 +55,7 @@
             // level
             // 
             level.AutoSize = true;
-            level.Location = new Point(256, 89);
+            level.Location = new Point(217, 89);
             level.Name = "level";
             level.Size = new Size(64, 24);
             level.TabIndex = 2;
@@ -64,7 +64,7 @@
             // rank
             // 
             rank.AutoSize = true;
-            rank.Location = new Point(542, 89);
+            rank.Location = new Point(540, 89);
             rank.Name = "rank";
             rank.Size = new Size(64, 24);
             rank.TabIndex = 3;
@@ -80,6 +80,7 @@
             Controls.Add(level);
             Controls.Add(subjects);
             Controls.Add(grade);
+            MaximizeBox = false;
             Name = "ResultForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "院校推荐";
