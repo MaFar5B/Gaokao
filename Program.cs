@@ -81,6 +81,7 @@ namespace Gaokao
             process.StandardInput.WriteLine(this.score.ToString());
             process.StandardInput.Flush();
             process.StandardInput.Close();
+            string output = process.StandardOutput.ReadToEnd();
         }
     }
     
