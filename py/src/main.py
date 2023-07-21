@@ -51,6 +51,10 @@ for major in cinn:
                 date = fl.iloc[n:n + 1, 0:4]
                 rep.append(date.to_string(header=False))
     for i in rep:
-        eep.append(i.split()[1:])
+        t = i.split()[1:]
+        t[0] = t[0][2:]
+        t[1] = t[1][4:]
+        eep.append(t)
+        eep.append(t)
     df = pd.DataFrame(eep, columns=["专业名称", "学校名称", "计划录取人数", "最低录取名次"])
     df.to_csv('site.csv')
