@@ -4,6 +4,7 @@
 *.vsidx
 *pyc
 
+.idea/
 bin/
 obj/
 .vs/
