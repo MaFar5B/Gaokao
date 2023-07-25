@@ -1,7 +1,11 @@
-﻿using System;
+﻿using CsvHelper;
+using System;
 using System.Collections;
 using System.Diagnostics;
+using System.Globalization;
+using System.IO;
 using System.Runtime.InteropServices;
+using System.Text;
 
 namespace Gaokao
 
@@ -85,8 +89,11 @@ namespace Gaokao
         }
         public void ReadFile()
         {
+            string path = "G:/Documents/GitHub/Gaokao/Data/result.csv";
+            using (var reader = new StreamReader("path\\to\\file.csv", Encoding.UTF8))
+            {
+            }
 
         }
-    }
     
 }
