@@ -49,6 +49,8 @@ namespace Gaokao
                 Program.student.wishes = WishForm.WishList;
                 Program.student.setStudentRank();
                 Program.student.generate();
+                Program.ReadResult();
+                Program.Process();
                 resultform.changeText();
                 resultform.ShowDialog();
             }
