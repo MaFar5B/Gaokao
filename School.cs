@@ -8,6 +8,7 @@ namespace Gaokao
 {
     public class School
     {
+        public String name;
         public String Level;//985,211,C9,重点，没有则为none
         public String First_Class_Condition;//一流大学、一流学科，没有则为none
         public String Property;//公办、民办、中外合作
@@ -16,7 +17,7 @@ namespace Gaokao
 
     public class Major
     {
-        public String name;
+        public String majorName;
         public MajorInfo MajorInfo_2020;
         public MajorInfo MajorInfo_2021;
         public MajorInfo MajorInfo_2022;
