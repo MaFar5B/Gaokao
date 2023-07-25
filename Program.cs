@@ -83,6 +83,10 @@ namespace Gaokao
             process.StandardInput.Close();
             string output = process.StandardOutput.ReadToEnd();
         }
+        public void ReadFile()
+        {
+
+        }
     }
     
 }
