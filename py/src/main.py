@@ -33,7 +33,7 @@ if __name__ == '__main__':
         cinn = wish.split()
         headers = {'专业代号及名称': [], '院校代号及名称': [], '投档计划数': [], '投档最低位次': []}
         kong = pd.DataFrame(headers)
-        kong.to_csv(f"{Gaokao_path}\Data/result.csv")
+        kong.to_csv(f"{Gaokao_path}\Data/result.csv",index=False)
 
         for major in cinn:
             fl = pd.read_csv(f"{Gaokao_path}\Data\sorts/{major}.csv")
@@ -41,7 +41,7 @@ if __name__ == '__main__':
             index2 = np.searchsorted(fl['投档最低位次'],rank + 3000,side='left')
             nearest_rows = fl.iloc[index1:index2]
             print(nearest_rows)
-            nearest_rows.to_csv(f"{Gaokao_path}\Data/result.csv",mode='a',header=None)
+            nearest_rows.to_csv(f"{Gaokao_path}\Data/result.csv",mode='a',header=None,index=False)
 
 
 
