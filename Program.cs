@@ -92,6 +92,7 @@ namespace Gaokao
             string path = "G:/Documents/GitHub/Gaokao/Data/result.csv";
             using (var reader = new StreamReader("path\\to\\file.csv", Encoding.UTF8))
             {
+
             }
 
         }
