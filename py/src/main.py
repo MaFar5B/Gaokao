@@ -31,7 +31,7 @@ if __name__ == '__main__':
         rank = int(input())
         wish = input()
         cinn = wish.split()
-        headers = {'院校名称': [], '专业': [], '2020投档计划数':[],'2020最低分': [], '2020投档最低位次': [],'2021投档计划数':[],'2021最低分':[],'2021投档最低位次':[],'2022投档计划数':[],'2022最低分':[],'2022投档最低位次':[],'特点':[],'X':[],'院校性质':[],'平均最低投档线':[]}
+        headers = {'School': [], 'Major': [], 'Planned_Enrollment_2020':[],'Grade_Line_2020': [], 'Rank_2020': [],'Planned_Enrollment_2021':[],'Grade_Line_2021':[],'Rank_2021':[],'Planned_Enrollment_2022':[],'Grade_Line_2022':[],'Rank_2022':[],'Level':[],'First_Class':[],'Property':[],'Average_Rank':[]}
         kong = pd.DataFrame(headers)
         kong.to_csv(f"{Gaokao_path}\Data/result.csv",index=False)
 
