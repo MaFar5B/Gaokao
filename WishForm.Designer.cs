@@ -134,7 +134,7 @@
             type5.Name = "type5";
             type5.Size = new Size(114, 24);
             type5.TabIndex = 8;
-            type5.Text = "理科农科";
+            type5.Text = "医科";
             type5.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // checkedListBox5

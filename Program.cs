@@ -19,6 +19,9 @@ namespace Gaokao
         public static ApplicationForm mainform = new ApplicationForm();
         public static Student student = new Student();
         public static List<School> schools = new List<School>();
+        public static List<School> high_risk = new List<School> ();
+        public static List<School> middle_risk = new List<School> ();
+        public static List<School> low_risk = new List<School> ();
 
         [DllImport("kernel32.dll")]
         public static extern bool AllocConsole();
@@ -34,6 +37,9 @@ namespace Gaokao
         public static void ReadResult()
         {
             schools.Clear();
+            high_risk.Clear();
+            middle_risk.Clear();
+            low_risk.Clear();
             string path = "G:/Documents/GitHub/Gaokao/Data/result.csv";
             using (StreamReader sr = new StreamReader(path))
             {
@@ -102,25 +108,20 @@ namespace Gaokao
         }
         public static void Process()
         {
-            int high = 0;
-            int middle = 0;
-            int low = 0;
             foreach (var school in schools)
             {
                 school.getRisk(student.rank);
                 if(school.risk == "high")
                 {
-                    high++;
+                    high_risk.Add(school);
                 } else if(school.risk == "middle")
                 {
-                    middle++;
+                    middle_risk.Add(school);
                 } else
                 {
-                    low++;
+                    low_risk.Add(school);
                 }
-                Console.WriteLine(school.name + " lowestRank:" + school.getLowestRank().ToString() + " risk:" + school.risk);
             }
-            Console.WriteLine("high:" + high.ToString() + " middle:" + middle.ToString() + " low:" + low.ToString());
         }
 
     }

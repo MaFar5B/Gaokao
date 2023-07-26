@@ -38,18 +38,18 @@ namespace Gaokao
 
         public int getLowestRank()
         {
-            int minRank = int.MaxValue;
+            int minRank = 0;
             foreach (Major major in majors)
             {
-                if (major.MajorInfo_2020.HasValue && major.MajorInfo_2020.Value.rank < minRank)
+                if (major.MajorInfo_2020.HasValue && major.MajorInfo_2020.Value.rank > minRank)
                 {
                     minRank = major.MajorInfo_2020.Value.rank;
                 }
-                if (major.MajorInfo_2021.HasValue && major.MajorInfo_2021.Value.rank < minRank)
+                if (major.MajorInfo_2021.HasValue && major.MajorInfo_2021.Value.rank > minRank)
                 {
                     minRank = major.MajorInfo_2021.Value.rank;
                 }
-                if (major.MajorInfo_2022.HasValue && major.MajorInfo_2022.Value.rank < minRank)
+                if (major.MajorInfo_2022.HasValue && major.MajorInfo_2022.Value.rank > minRank)
                 {
                     minRank = major.MajorInfo_2022.Value.rank;
                 }
@@ -58,14 +58,48 @@ namespace Gaokao
         }
         public void getRisk(int studentRank)
         {
-            if(this.getLowestRank() < studentRank && studentRank - this.getLowestRank() >= 1500) {
-                risk = "high";
-            } else if(this.getLowestRank() > studentRank && this.getLowestRank() - studentRank < 1500)
+            if(studentRank < 6000)
             {
-                risk = "low";
+                if (this.getLowestRank() < studentRank && studentRank - this.getLowestRank() >= 800)
+                {
+                    risk = "high";
+                }
+                else if (this.getLowestRank() > studentRank && this.getLowestRank() - studentRank >= 1500)
+                {
+                    risk = "low";
+                }
+                else
+                {
+                    risk = "middle";
+                }
+            } else if(studentRank <= 200000)
+            {
+                if (this.getLowestRank() < studentRank && studentRank - this.getLowestRank() >= 1000)
+                {
+                    risk = "high";
+                }
+                else if (this.getLowestRank() > studentRank && this.getLowestRank() - studentRank >= 1650)
+                {
+                    risk = "low";
+                }
+                else
+                {
+                    risk = "middle";
+                }
             } else
             {
-                risk = "middle";
+                if (this.getLowestRank() < studentRank && studentRank - this.getLowestRank() >= 2000)
+                {
+                    risk = "high";
+                }
+                else if (this.getLowestRank() > studentRank && this.getLowestRank() - studentRank >= 3000)
+                {
+                    risk = "low";
+                }
+                else
+                {
+                    risk = "middle";
+                }
             }
         }
     }

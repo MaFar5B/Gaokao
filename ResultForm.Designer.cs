@@ -32,6 +32,15 @@
             subjects = new Label();
             level = new Label();
             rank = new Label();
+            high_risk = new PictureBox();
+            middle_risk = new PictureBox();
+            low_risk = new PictureBox();
+            high_risk_count = new Label();
+            middle_risk_count = new Label();
+            low_risk_count = new Label();
+            ((System.ComponentModel.ISupportInitialize)high_risk).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)middle_risk).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)low_risk).BeginInit();
             SuspendLayout();
             // 
             // grade
@@ -70,12 +79,78 @@
             rank.TabIndex = 3;
             rank.Text = "位次：";
             // 
+            // high_risk
+            // 
+            high_risk.BackColor = SystemColors.GradientInactiveCaption;
+            high_risk.Image = Properties.Resources.冲;
+            high_risk.Location = new Point(37, 205);
+            high_risk.Name = "high_risk";
+            high_risk.Size = new Size(221, 117);
+            high_risk.SizeMode = PictureBoxSizeMode.Zoom;
+            high_risk.TabIndex = 4;
+            high_risk.TabStop = false;
+            // 
+            // middle_risk
+            // 
+            middle_risk.BackColor = SystemColors.GradientInactiveCaption;
+            middle_risk.Image = Properties.Resources.稳;
+            middle_risk.Location = new Point(328, 205);
+            middle_risk.Name = "middle_risk";
+            middle_risk.Size = new Size(221, 117);
+            middle_risk.SizeMode = PictureBoxSizeMode.Zoom;
+            middle_risk.TabIndex = 5;
+            middle_risk.TabStop = false;
+            // 
+            // low_risk
+            // 
+            low_risk.BackColor = SystemColors.GradientInactiveCaption;
+            low_risk.Image = Properties.Resources.保;
+            low_risk.Location = new Point(629, 205);
+            low_risk.Name = "low_risk";
+            low_risk.Size = new Size(221, 117);
+            low_risk.SizeMode = PictureBoxSizeMode.Zoom;
+            low_risk.TabIndex = 6;
+            low_risk.TabStop = false;
+            // 
+            // high_risk_count
+            // 
+            high_risk_count.AutoSize = true;
+            high_risk_count.Location = new Point(138, 353);
+            high_risk_count.Name = "high_risk_count";
+            high_risk_count.Size = new Size(28, 24);
+            high_risk_count.TabIndex = 7;
+            high_risk_count.Text = "所";
+            // 
+            // middle_risk_count
+            // 
+            middle_risk_count.AutoSize = true;
+            middle_risk_count.Location = new Point(430, 353);
+            middle_risk_count.Name = "middle_risk_count";
+            middle_risk_count.Size = new Size(28, 24);
+            middle_risk_count.TabIndex = 8;
+            middle_risk_count.Text = "所";
+            // 
+            // low_risk_count
+            // 
+            low_risk_count.AutoSize = true;
+            low_risk_count.Location = new Point(731, 353);
+            low_risk_count.Name = "low_risk_count";
+            low_risk_count.Size = new Size(28, 24);
+            low_risk_count.TabIndex = 9;
+            low_risk_count.Text = "所";
+            // 
             // ResultForm
             // 
             AutoScaleDimensions = new SizeF(11F, 24F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.GradientActiveCaption;
             ClientSize = new Size(886, 497);
+            Controls.Add(low_risk_count);
+            Controls.Add(middle_risk_count);
+            Controls.Add(high_risk_count);
+            Controls.Add(low_risk);
+            Controls.Add(middle_risk);
+            Controls.Add(high_risk);
             Controls.Add(rank);
             Controls.Add(level);
             Controls.Add(subjects);
@@ -84,6 +159,9 @@
             Name = "ResultForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "院校推荐";
+            ((System.ComponentModel.ISupportInitialize)high_risk).EndInit();
+            ((System.ComponentModel.ISupportInitialize)middle_risk).EndInit();
+            ((System.ComponentModel.ISupportInitialize)low_risk).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -101,6 +179,9 @@
                 this.level.Text = "批次：普通类二段";
             }
             this.rank.Text = "位次：" + Program.student.rank.ToString() + "名";
+            this.high_risk_count.Text = Program.high_risk.Count.ToString() + "所";
+            this.middle_risk_count.Text = Program.middle_risk.Count.ToString() + "所";
+            this.low_risk_count.Text = Program.low_risk.Count.ToString() + "所";
         }
 
         #endregion
@@ -109,5 +190,11 @@
         private Label subjects;
         private Label level;
         private Label rank;
+        private PictureBox high_risk;
+        private PictureBox middle_risk;
+        private PictureBox low_risk;
+        private Label high_risk_count;
+        private Label middle_risk_count;
+        private Label low_risk_count;
     }
 }

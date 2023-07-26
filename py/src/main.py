@@ -35,13 +35,30 @@ if __name__ == '__main__':
         kong = pd.DataFrame(headers)
         kong.to_csv(f"{Gaokao_path}\Data/result.csv",index=False)
 
-        for major in cinn:
-            fl = pd.read_csv(f"{Gaokao_path}\Data\sorts/{major}.csv")
-            index1 = np.searchsorted(fl['平均最低投档线'],rank - 3000,side='left')
-            index2 = np.searchsorted(fl['平均最低投档线'],rank + 3000,side='left')
-            nearest_rows = fl.iloc[index1:index2]
-            print(nearest_rows)
-            nearest_rows.to_csv(f"{Gaokao_path}\Data/result.csv",mode='a',header=None,index=False)
+        if rank <= 5000:
+            for major in cinn:
+                fl = pd.read_csv(f"{Gaokao_path}\Data\sorts/{major}.csv")
+                index1 = np.searchsorted(fl['平均最低投档线'],rank - 6000,side='left')
+                index2 = np.searchsorted(fl['平均最低投档线'],rank + 3000,side='left')
+                nearest_rows = fl.iloc[index1:index2]
+                print(nearest_rows)
+                nearest_rows.to_csv(f"{Gaokao_path}\Data/result.csv",mode='a',header=None,index=False)
+        elif rank <= 200000:
+            for major in cinn:
+                fl = pd.read_csv(f"{Gaokao_path}\Data\sorts/{major}.csv")
+                index1 = np.searchsorted(fl['平均最低投档线'],rank - 3500,side='left')
+                index2 = np.searchsorted(fl['平均最低投档线'],rank + 1000,side='left')
+                nearest_rows = fl.iloc[index1:index2]
+                print(nearest_rows)
+                nearest_rows.to_csv(f"{Gaokao_path}\Data/result.csv",mode='a',header=None,index=False)
+        else:
+            for major in cinn:
+                fl = pd.read_csv(f"{Gaokao_path}\Data\sorts/{major}.csv")
+                index1 = np.searchsorted(fl['平均最低投档线'],rank - 4000,side='left')
+                index2 = np.searchsorted(fl['平均最低投档线'],rank + 4000,side='left')
+                nearest_rows = fl.iloc[index1:index2]
+                print(nearest_rows)
+                nearest_rows.to_csv(f"{Gaokao_path}\Data/result.csv",mode='a',header=None,index=False)
 
 
 
