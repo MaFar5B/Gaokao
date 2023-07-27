@@ -16,23 +16,27 @@ namespace Gaokao
         ///  The main entry point for the application.
         /// </summary>
         /// 
-        public static ApplicationForm mainform = new ApplicationForm();
+        public static ApplicationForm mainForm = new ApplicationForm();
+        public static SubjectForm subjectSelectForm = new SubjectForm();
+        public static WishForm wishForm = new WishForm();
+        public static ResultForm resultForm = new ResultForm();
+        public static SchoolForm schoolForm_high = new SchoolForm();
+        public static SchoolForm schoolForm_middle = new SchoolForm();
+        public static SchoolForm schoolForm_low = new SchoolForm();
         public static Student student = new Student();
         public static List<School> schools = new List<School>();
         public static List<School> high_risk = new List<School> ();
         public static List<School> middle_risk = new List<School> ();
         public static List<School> low_risk = new List<School> ();
 
-        [DllImport("kernel32.dll")]
+        /*[DllImport("kernel32.dll")]
         public static extern bool AllocConsole();
         [DllImport("kernel32.dll")]
-        static extern bool FreeConsole();
+        static extern bool FreeConsole();*/
         [STAThread]
         static void Main()
         {
-            AllocConsole();
-            Application.Run(mainform);
-            FreeConsole();
+            Application.Run(mainForm);
         }
         public static void ReadResult()
         {
@@ -48,6 +52,28 @@ namespace Gaokao
                 {
                     string line = sr.ReadLine();
                     string[] values = line.Split(",");
+                    if(values.Length > 15)
+                    {
+                        if(values.Length == 16)
+                        {
+                            values[11] = values[11].Substring(1);
+                            values[12] = values[12].Substring(0, values[12].Length - 1);
+                            string level = values[11] + "," + values[12];
+                            string[] v = values.Skip(0).Take(11).ToArray();
+                            v = v.Append(level).ToArray();
+                            v = v.Concat(values.Skip(13)).ToArray();
+                            values = v;
+                        } else if(values.Length == 17)
+                        {
+                            values[11] = values[11].Substring(1);
+                            values[13] = values[13].Substring(0, values[13].Length - 1);
+                            string level = values[11] + "," + values[12] + "," + values[13];
+                            string[] v = values.Skip(0).Take(11).ToArray();
+                            v = v.Append(level).ToArray();
+                            v = v.Concat(values.Skip(14)).ToArray();
+                            values = v;
+                        }
+                    }
                     if (count != 0)
                     {
                         Major major = new Major();
@@ -108,6 +134,9 @@ namespace Gaokao
         }
         public static void Process()
         {
+            high_risk.Clear();
+            middle_risk.Clear();
+            low_risk.Clear();
             foreach (var school in schools)
             {
                 school.getRisk(student.rank);
@@ -139,7 +168,7 @@ namespace Gaokao
             process.StartInfo.Arguments = "G:/Documents/GitHub/Gaokao/py/src/main.py";
             process.StartInfo.UseShellExecute = false;
             process.StartInfo.RedirectStandardOutput = true;
-            process.StartInfo.CreateNoWindow = false;
+            process.StartInfo.CreateNoWindow = true;
             process.StartInfo.RedirectStandardInput = true;
             process.Start();
             process.StandardInput.WriteLine("get_rank");
@@ -156,7 +185,7 @@ namespace Gaokao
             process.StartInfo.Arguments = "G:/Documents/GitHub/Gaokao/py/src/main.py";
             process.StartInfo.UseShellExecute = false;
             process.StartInfo.RedirectStandardOutput = true;
-            process.StartInfo.CreateNoWindow = false;
+            process.StartInfo.CreateNoWindow = true;
             process.StartInfo.RedirectStandardInput = true;
             process.Start();
             string input = "generate\n";

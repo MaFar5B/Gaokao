@@ -5,9 +5,6 @@ namespace Gaokao
 {
     public partial class ApplicationForm : Form
     {
-        public static SubjectForm subjectselectform = new SubjectForm();
-        public static WishForm wishform = new WishForm();
-        public static ResultForm resultform = new ResultForm();
         public static bool Wish_Clicked = false;
         public ApplicationForm()
         {
@@ -17,7 +14,7 @@ namespace Gaokao
 
         private void SelectSubject(object sender, EventArgs e)
         {
-            subjectselectform.ShowDialog();
+            Program.subjectSelectForm.ShowDialog();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -44,15 +41,15 @@ namespace Gaokao
                 Program.student.score = int.Parse(this.textBox5.Text);
                 if (!Wish_Clicked)
                 {
-                    wishform.full_wished();
+                    Program.wishForm.full_wished();
                 }
                 Program.student.wishes = WishForm.WishList;
                 Program.student.setStudentRank();
                 Program.student.generate();
                 Program.ReadResult();
                 Program.Process();
-                resultform.changeText();
-                resultform.ShowDialog();
+                Program.resultForm.changeText();
+                Program.resultForm.ShowDialog();
             }
         }
 
@@ -60,7 +57,7 @@ namespace Gaokao
         {
             Wish_Clicked = true;
             WishForm.WishList.Clear();
-            wishform.ShowDialog();
+            Program.wishForm.ShowDialog();
         }
     }
 }

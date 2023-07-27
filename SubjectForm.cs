@@ -48,8 +48,8 @@ namespace Gaokao
                     subjects.Add("历史");
                 if (geo.Checked)
                     subjects.Add("地理");
-                ApplicationForm.subjectselectform.Hide();
-                Program.mainform.setLable(subjects[0], subjects[1], subjects[2]);
+                Program.subjectSelectForm.Hide();
+                Program.mainForm.setLable(subjects[0], subjects[1], subjects[2]);
             }
         }
     }

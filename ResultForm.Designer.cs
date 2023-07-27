@@ -38,6 +38,7 @@
             high_risk_count = new Label();
             middle_risk_count = new Label();
             low_risk_count = new Label();
+            ReGenerate = new Button();
             ((System.ComponentModel.ISupportInitialize)high_risk).BeginInit();
             ((System.ComponentModel.ISupportInitialize)middle_risk).BeginInit();
             ((System.ComponentModel.ISupportInitialize)low_risk).BeginInit();
@@ -89,6 +90,7 @@
             high_risk.SizeMode = PictureBoxSizeMode.Zoom;
             high_risk.TabIndex = 4;
             high_risk.TabStop = false;
+            high_risk.Click += high_risk_click;
             // 
             // middle_risk
             // 
@@ -100,6 +102,7 @@
             middle_risk.SizeMode = PictureBoxSizeMode.Zoom;
             middle_risk.TabIndex = 5;
             middle_risk.TabStop = false;
+            middle_risk.Click += middle_risk_click;
             // 
             // low_risk
             // 
@@ -111,6 +114,7 @@
             low_risk.SizeMode = PictureBoxSizeMode.Zoom;
             low_risk.TabIndex = 6;
             low_risk.TabStop = false;
+            low_risk.Click += low_risk_click;
             // 
             // high_risk_count
             // 
@@ -139,12 +143,24 @@
             low_risk_count.TabIndex = 9;
             low_risk_count.Text = "所";
             // 
+            // ReGenerate
+            // 
+            ReGenerate.BackColor = SystemColors.GradientInactiveCaption;
+            ReGenerate.Location = new Point(328, 409);
+            ReGenerate.Name = "ReGenerate";
+            ReGenerate.Size = new Size(221, 55);
+            ReGenerate.TabIndex = 10;
+            ReGenerate.Text = "返回";
+            ReGenerate.UseVisualStyleBackColor = false;
+            ReGenerate.Click += ReGenerate_Click;
+            // 
             // ResultForm
             // 
             AutoScaleDimensions = new SizeF(11F, 24F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.GradientActiveCaption;
             ClientSize = new Size(886, 497);
+            Controls.Add(ReGenerate);
             Controls.Add(low_risk_count);
             Controls.Add(middle_risk_count);
             Controls.Add(high_risk_count);
@@ -196,5 +212,6 @@
         private Label high_risk_count;
         private Label middle_risk_count;
         private Label low_risk_count;
+        private Button ReGenerate;
     }
 }

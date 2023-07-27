@@ -14,45 +14,113 @@ namespace Gaokao
         public String Property;//公办、民办、中外合作
         public List<Major> majors = new List<Major>();
         public string risk;
-        
-        public int getLowestGradeLine()
-        {
-            int minGrade = int.MaxValue;
-            foreach (Major major in majors)
-            {
-                if (major.MajorInfo_2020.HasValue && major.MajorInfo_2020.Value.gradeLine < minGrade)
-                {
-                    minGrade = major.MajorInfo_2020.Value.gradeLine;
-                }
-                if (major.MajorInfo_2021.HasValue && major.MajorInfo_2021.Value.gradeLine < minGrade)
-                {
-                    minGrade = major.MajorInfo_2021.Value.gradeLine;
-                }
-                if (major.MajorInfo_2022.HasValue && major.MajorInfo_2022.Value.gradeLine < minGrade)
-                {
-                    minGrade = major.MajorInfo_2022.Value.gradeLine;
-                }
-            }
-            return minGrade;
-        }
-
-        public int getLowestRank()
+        public int getLowestRank(int year)
         {
             int minRank = 0;
+            switch(year)
+            {
+                case 2020:
+                    foreach (Major major in majors)
+                    {
+                        if (major.MajorInfo_2020.HasValue && major.MajorInfo_2020.Value.rank > minRank)
+                        {
+                            minRank = major.MajorInfo_2020.Value.rank;
+                        }
+                    }
+                    break;
+                case 2021:
+                    foreach (Major major in majors)
+                    {
+                        if (major.MajorInfo_2021.HasValue && major.MajorInfo_2021.Value.rank > minRank)
+                        {
+                            minRank = major.MajorInfo_2021.Value.rank;
+                        }
+                    }
+                    break;
+                case 2022:
+                    foreach (Major major in majors)
+                    {
+                        if (major.MajorInfo_2022.HasValue && major.MajorInfo_2022.Value.rank > minRank)
+                        {
+                            minRank = major.MajorInfo_2022.Value.rank;
+                        }
+                    }
+                    break;
+            }
+            return minRank;
+        }
+
+        public int getLowestGradeLine(int year)
+        {
+            int minGradeLine = int.MaxValue;
+            switch (year)
+            {
+                case 2020:
+                    foreach (Major major in majors)
+                    {
+                        if (major.MajorInfo_2020.HasValue && major.MajorInfo_2020.Value.gradeLine < minGradeLine)
+                        {
+                            minGradeLine = major.MajorInfo_2020.Value.gradeLine;
+                        }
+                    }
+                    break;
+                case 2021:
+                    foreach (Major major in majors)
+                    {
+                        if (major.MajorInfo_2021.HasValue && major.MajorInfo_2021.Value.rank < minGradeLine)
+                        {
+                            minGradeLine = major.MajorInfo_2021.Value.gradeLine;
+                        }
+                    }
+                    break;
+                case 2022:
+                    foreach (Major major in majors)
+                    {
+                        if (major.MajorInfo_2022.HasValue && major.MajorInfo_2022.Value.rank < minGradeLine)
+                        {
+                            minGradeLine = major.MajorInfo_2022.Value.gradeLine;
+                        }
+                    }
+                    break;
+            }
+            if(minGradeLine!= int.MaxValue)
+            {
+                return minGradeLine;
+            }
+            return 0;
+        }
+        public int getAverageLowestRank()
+        {
+            int minRank = 0;
+            int total = 0;
+            int count = 0;
             foreach (Major major in majors)
             {
-                if (major.MajorInfo_2020.HasValue && major.MajorInfo_2020.Value.rank > minRank)
+                if(getLowestRank(2020) != 0)
                 {
-                    minRank = major.MajorInfo_2020.Value.rank;
+                    total += getLowestRank(2020);
+                    count++;
                 }
-                if (major.MajorInfo_2021.HasValue && major.MajorInfo_2021.Value.rank > minRank)
+                if(getLowestRank(2021) != 0)
                 {
-                    minRank = major.MajorInfo_2021.Value.rank;
+                    total += getLowestRank(2021);
+                    count++;
                 }
-                if (major.MajorInfo_2022.HasValue && major.MajorInfo_2022.Value.rank > minRank)
+                if(getLowestRank(2022) != 0)
                 {
-                    minRank = major.MajorInfo_2022.Value.rank;
+                    total += getLowestRank(2022);
+                    count++;
                 }
+                if(count > 0)
+                {
+                    total /= count;
+                }
+                if(minRank < total)
+                {
+                    minRank = total;
+                }
+                total = 0;
+                count = 0;
             }
             return minRank;
         }
@@ -60,11 +128,11 @@ namespace Gaokao
         {
             if(studentRank < 6000)
             {
-                if (this.getLowestRank() < studentRank && studentRank - this.getLowestRank() >= 800)
+                if (this.getAverageLowestRank() < studentRank && studentRank - this.getAverageLowestRank() >= 800)
                 {
                     risk = "high";
                 }
-                else if (this.getLowestRank() > studentRank && this.getLowestRank() - studentRank >= 1500)
+                else if (this.getAverageLowestRank() > studentRank && this.getAverageLowestRank() - studentRank >= 1500)
                 {
                     risk = "low";
                 }
@@ -74,11 +142,11 @@ namespace Gaokao
                 }
             } else if(studentRank <= 200000)
             {
-                if (this.getLowestRank() < studentRank && studentRank - this.getLowestRank() >= 1000)
+                if (this.getAverageLowestRank() < studentRank && studentRank - this.getAverageLowestRank() >= 1000)
                 {
                     risk = "high";
                 }
-                else if (this.getLowestRank() > studentRank && this.getLowestRank() - studentRank >= 1650)
+                else if (this.getAverageLowestRank() > studentRank && this.getAverageLowestRank() - studentRank >= 1650)
                 {
                     risk = "low";
                 }
@@ -88,11 +156,11 @@ namespace Gaokao
                 }
             } else
             {
-                if (this.getLowestRank() < studentRank && studentRank - this.getLowestRank() >= 2000)
+                if (this.getAverageLowestRank() < studentRank && studentRank - this.getAverageLowestRank() >= 2000)
                 {
                     risk = "high";
                 }
-                else if (this.getLowestRank() > studentRank && this.getLowestRank() - studentRank >= 3000)
+                else if (this.getAverageLowestRank() > studentRank && this.getAverageLowestRank() - studentRank >= 3000)
                 {
                     risk = "low";
                 }
@@ -103,7 +171,6 @@ namespace Gaokao
             }
         }
     }
-
     public class Major
     {
         public String majorName;

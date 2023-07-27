@@ -67,7 +67,7 @@ namespace Gaokao
             {
                 this.full_wished();
             }
-            ApplicationForm.wishform.Hide();
+            Program.wishForm.Hide();
         }
 
         private void Changed1(object sender, EventArgs e)
