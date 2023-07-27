@@ -1,6 +1,6 @@
-﻿using CsvHelper;
-using System;
+﻿using System;
 using System.Collections;
+using System.Configuration;
 using System.Diagnostics;
 using System.Globalization;
 using System.IO;
@@ -28,6 +28,7 @@ namespace Gaokao
         public static List<School> high_risk = new List<School> ();
         public static List<School> middle_risk = new List<School> ();
         public static List<School> low_risk = new List<School> ();
+        public static string pythonPath = ConfigurationManager.AppSettings["PythonPath"];
 
         /*[DllImport("kernel32.dll")]
         public static extern bool AllocConsole();
@@ -44,7 +45,7 @@ namespace Gaokao
             high_risk.Clear();
             middle_risk.Clear();
             low_risk.Clear();
-            string path = "G:/Documents/GitHub/Gaokao/Data/result.csv";
+            string path = "Data/result.csv";
             using (StreamReader sr = new StreamReader(path))
             {
                 int count = 0;
@@ -164,8 +165,8 @@ namespace Gaokao
         public void setStudentRank()
         {
             Process process = new Process();
-            process.StartInfo.FileName = @"C:\Users\MaFar\AppData\Local\Programs\Python\Python311\python.exe";
-            process.StartInfo.Arguments = "G:/Documents/GitHub/Gaokao/py/src/main.py";
+            process.StartInfo.FileName = Program.pythonPath;
+            process.StartInfo.Arguments = "py/src/main.py";
             process.StartInfo.UseShellExecute = false;
             process.StartInfo.RedirectStandardOutput = true;
             process.StartInfo.CreateNoWindow = true;
@@ -181,8 +182,8 @@ namespace Gaokao
         public void generate()
         {
             Process process = new Process();
-            process.StartInfo.FileName = @"C:\Users\MaFar\AppData\Local\Programs\Python\Python311\python.exe";
-            process.StartInfo.Arguments = "G:/Documents/GitHub/Gaokao/py/src/main.py";
+            process.StartInfo.FileName = Program.pythonPath;
+            process.StartInfo.Arguments = "py/src/main.py";
             process.StartInfo.UseShellExecute = false;
             process.StartInfo.RedirectStandardOutput = true;
             process.StartInfo.CreateNoWindow = true;
