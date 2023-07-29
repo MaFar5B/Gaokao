@@ -1,3 +1,3 @@
 # Gaokao
 志愿填报推荐
-分数对应位次查询
+使用时请将config内的PythonPath修改为本地的python.exe的路径
